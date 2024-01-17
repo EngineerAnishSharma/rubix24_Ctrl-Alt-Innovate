@@ -86,10 +86,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(socialIconList.length, (index) => Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: CircleAvatar(
-                          radius: 25,
-                          backgroundColor: lightGrey,
-                          child: Image.asset(socialIconList[index],width: 30,),
+                        child: GestureDetector(
+                          onTap: () async {
+                                      switch (index) {
+                                        case 0:
+                                          break;
+                                        case 1:
+                                          controller.isLoading(true);
+                                          await controller.signInWithGoogle();
+                                          controller.isLoading(false);
+                                          Get.to(() => const Home());
+                                          break;
+                                        case 2:
+                                          break;
+                                        default:
+                                          break;
+                                      }
+                                    },
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: lightGrey,
+                            child: Image.asset(socialIconList[index],width: 30,),
+                          ),
                         ),
                       )),
                     )
