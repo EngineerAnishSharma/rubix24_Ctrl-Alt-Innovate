@@ -39,6 +39,8 @@ dependencies:
   firebase_auth: ^4.15.0
   firebase_storage: ^11.5.3
   cloud_firestore: ^4.13.3
+  get: ^4.6.6
+  velocity_x: ^4.1.2
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -78,6 +84,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: sans_regular
+      fonts:
+        - asset: assets/fonts/sans_regular.ttf
+
+    - family: sans_semibold
+      fonts:
+        - asset: assets/fonts/sans_semibold.ttf
+
+    - family: sans_bold
+      fonts:
+        - asset: assets/fonts/sans_bold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
