@@ -6,7 +6,7 @@ import 'package:rubix_application/consts/firebase_const.dart';
 import 'package:rubix_application/consts/strings.dart';
 import 'package:rubix_application/consts/styles.dart';
 import 'package:rubix_application/controller/auth_controller.dart';
-import 'package:rubix_application/views/home_screen/home.dart';
+import 'package:rubix_application/views/onboarding_screen/onboarding.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
@@ -128,7 +128,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 );
                               }).then((value){
                                 VxToast.show(context, msg: loggedIn);
-                                Get.offAll(() => const Home()); //delete all stack navigate to another screen
+                                Get.offAll(() => const Onboarding()); //delete all stack navigate to another screen
                               });
                             }catch(e){
                               // VxToast.show(context, msg: e.toString());

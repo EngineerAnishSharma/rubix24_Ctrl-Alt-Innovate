@@ -5,8 +5,8 @@ import 'package:rubix_application/consts/colors.dart';
 import 'package:rubix_application/consts/lists.dart';
 import 'package:rubix_application/consts/strings.dart';
 import 'package:rubix_application/consts/styles.dart';
-import 'package:rubix_application/views/home_screen/home.dart';
 import 'package:rubix_application/views/auth_screen/signup_screen.dart';
+import 'package:rubix_application/views/onboarding_screen/onboarding.dart';
 import 'package:rubix_application/widgets_common/applogo_widget.dart';
 import 'package:rubix_application/widgets_common/bg_widget.dart';
 import 'package:rubix_application/widgets_common/our_button.dart';
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           then((value){
                             if(value!=null){
                               VxToast.show(context, msg: loggedIn);
-                              Get.to(const Home());
+                              Get.to(const Onboarding());
                             }else{
                               controller.isLoading(false);
                             }
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           controller.isLoading(true);
                                           await controller.signInWithGoogle();
                                           controller.isLoading(false);
-                                          Get.to(() => const Home());
+                                          Get.to(() => const Onboarding());
                                           break;
                                         case 2:
                                           break;

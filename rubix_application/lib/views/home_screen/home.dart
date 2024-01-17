@@ -5,7 +5,10 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:rubix_application/consts/colors.dart';
 import 'package:rubix_application/controller/home_controller.dart';
+import 'package:rubix_application/views/community/community_screen.dart';
 import 'package:rubix_application/views/home_screen/home_screen.dart';
+import 'package:rubix_application/views/home_screen/job_find.dart';
+import 'package:rubix_application/views/profile_screen/profile_screen.dart';
 import 'package:rubix_application/widgets_common/exit_dailog.dart';
 
 
@@ -42,9 +45,9 @@ class Home extends StatelessWidget {
 
     var navbarBody = [
       const HomeScreen(),
-      // const SectionScreen(),
-      // const ABC(),
-      // const ProfileScreen()
+      const FindJobScreen(),
+      const CommunityScreen(),
+      const ProfileScreen()
     ];
 
     return WillPopScope(
@@ -66,7 +69,7 @@ class Home extends StatelessWidget {
         ),
         bottomNavigationBar: CurvedNavigationBar(
           index: controller.currentNavindex.value,
-          color: Colors.blue,
+          color: Colors.orange,
 
           backgroundColor: whiteColor,
           height: 55,

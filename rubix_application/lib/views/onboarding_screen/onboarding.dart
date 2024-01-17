@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rubix_application/consts/consts.dart';
-import 'package:rubix_application/views/auth_screen/login_screen.dart';
+import 'package:rubix_application/views/home_screen/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboarding extends StatefulWidget {
@@ -152,7 +152,7 @@ class _TestState extends State<Onboarding> {
                     onPressed: () {
                       setState(() {
                         currentPage == 2.0
-                            ? Get.offAll(() => const LoginScreen())
+                            ? Get.offAll(() => const Home())
                             : _pageController.nextPage(
                                 duration: const Duration(milliseconds: 200),
                                 curve: Curves.easeIn,
