@@ -3,13 +3,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:rubix_application/consts/consts.dart';
-import 'package:rubix_application/consts/lists.dart';
-import 'package:rubix_application/consts/loading_indicator.dart';
 import 'package:rubix_application/controller/auth_controller.dart';
 import 'package:rubix_application/controller/profile_controller.dart';
 import 'package:rubix_application/services/firestore_services.dart';
 import 'package:rubix_application/views/auth_screen/login_screen.dart';
-import 'package:rubix_application/views/profile_screen/components/details_card.dart';
 import 'package:rubix_application/views/profile_screen/components/edit_profile_screen.dart';
 import 'package:rubix_application/widgets_common/bg_widget.dart';
 
@@ -44,8 +41,8 @@ class ProfileScreen extends StatelessWidget {
                       Icons.edit,
                       color: whiteColor,
                     ).onTap(() {
-                      // controller.nameController.text = data!['name'];
-                      controller.nameController.text = data['name'];
+                      controller.nameController.text = data!['name'];
+                      // controller.nameController.text = data['name'];
 
                       Get.to(EditProfileScreen(
                         data: data,
@@ -95,28 +92,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               10.heightBox,
-              FutureBuilder(
-                future: FirestoreServices.getCounts(),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (!snapshot.hasData) {
-                    return loadingIndicator();
-                  } else {
-                    var countData = snapshot.data;
-
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        detailsCard(context.screenWidth / 3.5,
-                            countData[0].toString(), "In your cart"),
-                        detailsCard(context.screenWidth / 3.5,
-                            countData[1].toString(), "In your wishlist"),
-                        detailsCard(context.screenWidth / 3.5,
-                            countData[2].toString(), "Your order"),
-                      ],
-                    ).box.color(redColor).make();
-                  }
-                },
-              ),
+              
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //   children: [
@@ -129,51 +105,51 @@ class ProfileScreen extends StatelessWidget {
               //   ],
               // ).box.color(redColor).make(),
               //Button section
-              ListView.separated(
-                shrinkWrap: true,
-                separatorBuilder: (context, index) {
-                  return const Divider(
-                    color: lightGrey,
-                  );
-                },
-                itemCount: profileButtonsList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    onTap: () {
-                      // switch(index){
-                      //   case 0: Get.to(const WishlistScreen());
-                      //     break;
-                      //   case 1: Get.to(const OrdersScreen());
-                      //     break;
-                      //   case 2: Get.to(const MessageScreen());
-                      //     break;
-                      //   default:
-                      //     break;
+              // ListView.separated(
+              //   shrinkWrap: true,
+              //   separatorBuilder: (context, index) {
+              //     return const Divider(
+              //       color: lightGrey,
+              //     );
+              //   },
+              //   itemCount: profileButtonsList.length,
+              //   itemBuilder: (BuildContext context, int index) {
+              //     return ListTile(
+              //       onTap: () {
+              //         // switch(index){
+              //         //   case 0: Get.to(const WishlistScreen());
+              //         //     break;
+              //         //   case 1: Get.to(const OrdersScreen());
+              //         //     break;
+              //         //   case 2: Get.to(const MessageScreen());
+              //         //     break;
+              //         //   default:
+              //         //     break;
 
-                      // }
-                    },
-                    leading: Image.asset(
-                      profileButtonsIcon[index],
-                      width: 22,
-                    ),
-                    title: profileButtonsList[index]
-                        .text
-                        .fontFamily(semibold)
-                        .color(darkFontGrey)
-                        .make(),
-                  );
-                },
-              )
-                  .box
-                  .rounded
-                  .white
-                  .margin(const EdgeInsets.all(12))
-                  .padding(const EdgeInsets.symmetric(horizontal: 16))
-                  .shadowSm
-                  .make()
-                  .box
-                  .color(redColor)
-                  .make(),
+              //         // }
+              //       },
+              //       leading: Image.asset(
+              //         profileButtonsIcon[index],
+              //         width: 22,
+              //       ),
+              //       title: profileButtonsList[index]
+              //           .text
+              //           .fontFamily(semibold)
+              //           .color(darkFontGrey)
+              //           .make(),
+              //     );
+              //   },
+              // )
+              //     .box
+              //     .rounded
+              //     .white
+              //     .margin(const EdgeInsets.all(12))
+              //     .padding(const EdgeInsets.symmetric(horizontal: 16))
+              //     .shadowSm
+              //     .make()
+              //     .box
+              //     .color(redColor)
+              //     .make(),
             ]),
           );
         }
