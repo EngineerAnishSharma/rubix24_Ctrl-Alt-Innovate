@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:get/get.dart';
 import 'package:rubix_application/consts/consts.dart';
 import 'package:rubix_application/controller/profile_controller.dart';

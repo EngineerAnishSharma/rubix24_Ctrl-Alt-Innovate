@@ -10,10 +10,10 @@ class TextToSpeech {
     _flutterTts = FlutterTts();
   }
 
-  static const double NormalSpeechSpeed = 0.2;
-  static const double SlowSpeechSpeed = 0.05;
+  static const double normalSpeechSpeed = 0.2;
+  static const double slowSpeechSpeed = 0.05;
 
-  Future<void> speak(String text, {double rate = NormalSpeechSpeed}) async {
+  Future<void> speak(String text, {double rate = normalSpeechSpeed}) async {
     await _flutterTts.setLanguage('hi-IN');
     print(rate);
     _flutterTts.setSpeechRate(rate);
