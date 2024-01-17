@@ -1,0 +1,130 @@
+{
+   "checksum": "c25bde7be5bde5a8d70fb10f3bf87981",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13256113836447065",
+            "date_last_used": "0",
+            "guid": "e4b08b91-cdba-4641-8eb3-8265242e4a6d",
+            "id": "19",
+            "name": "Gmail",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://accounts.google.com/b/0/AddMailService"
+         }, {
+            "date_added": "13256113836448740",
+            "date_last_used": "0",
+            "guid": "a4ef55e4-2b42-4d93-bee9-998da9478c12",
+            "id": "20",
+            "name": "YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://youtube.com/"
+         }, {
+            "date_added": "13256113836450617",
+            "date_last_used": "0",
+            "guid": "9c090c2c-99c7-4aac-a082-5b17366eecec",
+            "id": "21",
+            "name": "Maps",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://maps.google.com/"
+         }, {
+            "date_added": "13333992988145197",
+            "date_last_used": "0",
+            "guid": "e68ffb80-d015-463f-b521-daeb7f6eaad3",
+            "id": "22",
+            "name": " WhatsApp",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://web.whatsapp.com/"
+         }, {
+            "date_added": "13349940745641914",
+            "date_last_used": "0",
+            "guid": "4b12dc7e-228e-4b97-adac-7f4a36c5aae0",
+            "id": "11",
+            "name": "Amazon.co.uk - Online Shopping",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://www.amazon.com/gp/ubp/oneButton/config/redirectHome?tagbase=hpbk-ubpl&ref=aagateway-edgebook-hp"
+         }, {
+            "date_added": "13349940745641662",
+            "date_last_used": "0",
+            "guid": "62c21ab5-3dc0-40e4-adb7-532c5bd10305",
+            "id": "10",
+            "name": "Agoda",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://js.redirect.hp.com/jumpstation?bd=agoda&c=222&locale=*&pf=*&tp=edge&TYPE=3"
+         }, {
+            "date_added": "13349940745641412",
+            "date_last_used": "0",
+            "guid": "f5e0e586-2709-41f0-94c5-2c52146d9a27",
+            "id": "9",
+            "name": "Express VPN",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://js.redirect.hp.com/jumpstation?bd=expressvpn&c=*&locale=en_us&pf=*&s=*&tp=edge"
+         }, {
+            "date_added": "13349940745641145",
+            "date_last_used": "0",
+            "guid": "256a8042-0f81-4fe3-ae9a-f7f134da3e2f",
+            "id": "8",
+            "name": "McAfee Security",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/browserfav/hp.html"
+         }, {
+            "date_added": "13349940745640146",
+            "date_last_used": "0",
+            "guid": "f6e25ef3-a912-4716-a86d-8f9785c7b85a",
+            "id": "7",
+            "name": "LastPass password manager",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://js.redirect.hp.com/jumpstation?bd=lastpass&c=222&locale=*&pf=*&tp=edge&TYPE=3"
+         } ],
+         "date_added": "13349940745284738",
+         "date_last_used": "0",
+         "date_modified": "13349948370323763",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13349940745284742",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13349940745284743",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCIJaJRaNAQAAEgAgASoYR1VwbVdiUlJoWnpjZUlFcFIweUZKZz09oAYMEokBCAIShAEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJGQwMDY3M2QxLTA0MjQtNWM1My1hN2MwLTk2NDRhNjA5MDAwMBgAIAAoADCNwNucxDA4yMLbnMQwQMjC25zEMEocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAAASpwEIExKiAQoccnFTRTNMTEFnc214MDVtMjRPaGNZeWcwWENZPRIkZTRiMDhiOTEtY2RiYS00NjQxLThlYjMtODI2NTI0MmU0YTZkGAAgAigCMJnhkrHRMTi5pILDsjFA3NWSsdExShxtV0grZVFyaGJ1ZUlqTWc2b2tIV25wdC9BaVU9Wh4iHG5GZ1NkUFdCWGlvRTc1eGF1WTd4S1QyZ3FBbz1lmz2FthKJAQgDEoQBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiQyZjNhYTNhMy04ZjIyLTUzNjUtYWE4Mi1kMzFlOTc5MzBiY2YYACAAKAAwksDbnMQwONXD25zEMEDVw9ucxDBKHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAEqgBCBUSowEKHElMUVdEYVc2U1ZYV0RDelQxaHpEZ2diYTd3RT0SJDljMDkwYzJjLTk5YzctNGFhYy1hMDgyLTViMTczNjZlZWNlYxgAIAIoAjCa4ZKx0TE4gKSCw7IxQN3VkrHRMUocTTJEckRpQVpkQmE3SGJPb0hyT2ZESUJ3RnBBPVofIh3bMlB1UE5COVRkN1h3djRGR25Jb1BUemxYTU5vPWWk++iYEokBCAEShAEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDM1ZjIyYjY1LTdmNWItNTFiNC04MmExLThhY2NmZGNjMTE5MhgAIAAoADCMwNucxDA4ucLbnMQwQLnC25zEMEocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAAASqAEIFBKjAQocenQ3TXc0eWZOdk5yK0dSWGIyTGQzZnBxemhvPRIkYTRlZjU1ZTQtMmI0Mi00ZDkzLWJlZTktOTk4ZGE5NDc4YzEyGAAgAigCMJvhkrHRMTidpILDsjFA3dWSsdExShxiSUFyOEhpSkN6RnplRUk5ZWkwQ1A0eHUwNVE9Wh8iHbc4SlY4eVM4ZzRyOVBocS8yUXpKOU4vUEpYUnM9ZTj5OTMSqAEIFhKjAQocOXYzUUFVUGVtSnc4OE1OaVJuTDRxdWdWSWFZPRIkZTY4ZmZiODAtZDAxNS00NjNmLWI1MjEtZGFlYjdmNmVhYWQzGAAgAigCMJzhkrHRMTjXpILDsjFA3tWSsdExShxCVThZMnVveldCSmxUL3BGQ0dqTVN2enlSNEk9Wh8iHe15VzBJd2VlWlJkVHFlRExRZ3paanZ6SlhvL3c9ZRX0gJgwADgA",
+   "version": 1
+}
