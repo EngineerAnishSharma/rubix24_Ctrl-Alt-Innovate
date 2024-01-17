@@ -5,7 +5,6 @@ import 'package:application/consts/styles.dart';
 import 'package:application/controller/auth_controller.dart';
 import 'package:application/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -131,7 +130,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 Get.offAll(() => const Home()); //delete all stack navigate to another screen
                               });
                             }catch(e){
-                              VxToast.show(context, msg: e.toString());
+                              // VxToast.show(context, msg: e.toString());
                               auth.signOut();
                               controller.isLoading(false);
                             }
