@@ -5,23 +5,22 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:rubix_application/consts/colors.dart';
 import 'package:rubix_application/views/profile_screen/components/profile_editor.dart';
+import 'package:rubix_application/views/splash_screen/splash_screen.dart';
 
-void main() async{
-  
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
-      apiKey: "AIzaSyBg-7h5f7toS-IvD7MQRzbHvd7jDi4KOOM",
-      authDomain: "tsec-hackathon-61291.firebaseapp.com",
-      projectId: "tsec-hackathon-61291",
-      storageBucket: "tsec-hackathon-61291.appspot.com",
-      messagingSenderId: "543797904930",
-      appId: "1:543797904930:web:7c87f73813e2b87ea4ac7b",
-      measurementId: "G-FJR687FJPR"
-    ));
+            apiKey: "AIzaSyBg-7h5f7toS-IvD7MQRzbHvd7jDi4KOOM",
+            authDomain: "tsec-hackathon-61291.firebaseapp.com",
+            projectId: "tsec-hackathon-61291",
+            storageBucket: "tsec-hackathon-61291.appspot.com",
+            messagingSenderId: "543797904930",
+            appId: "1:543797904930:web:7c87f73813e2b87ea4ac7b",
+            measurementId: "G-FJR687FJPR"));
   } else {
     await Firebase.initializeApp();
   }
@@ -38,23 +37,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.transparent,
-          appBarTheme: const AppBarTheme(
-            // set the bar
-            iconTheme: IconThemeData(
-              color: darkFontGrey,
-            ),
-            elevation: 0.0,
-            backgroundColor: Colors.transparent,
+        scaffoldBackgroundColor: Colors.transparent,
+        appBarTheme: const AppBarTheme(
+          // set the bar
+          iconTheme: IconThemeData(
+            color: darkFontGrey,
           ),
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
         ),
-      home: const ProfileEditor(),
+      ),
+      home: const SplashScreen(),
     );
   }
 }
-

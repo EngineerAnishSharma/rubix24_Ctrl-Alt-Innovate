@@ -34,7 +34,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                BioSection()
+                const BioSection()
                     .box
                     .rounded
                     .clip(Clip.antiAlias)
@@ -49,9 +49,9 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 10.heightBox,
                 const EducationSection(),
                 10.heightBox,
-                CareerPreferencesSection(),
+                const CareerPreferencesSection(),
                 10.heightBox,
-                LanguageSection()
+                const LanguageSection()
               ],
             ),
           )
@@ -253,7 +253,7 @@ class _LanguageSectionState extends State<LanguageSection> {
                 ),
               ),
               IconButton(
-                icon: _isEditing ? Icon(Icons.done) : Icon(Icons.edit),
+                icon: _isEditing ? const Icon(Icons.done) : const Icon(Icons.edit),
                 onPressed: () {
                   setState(() {
                     _isEditing = !_isEditing;

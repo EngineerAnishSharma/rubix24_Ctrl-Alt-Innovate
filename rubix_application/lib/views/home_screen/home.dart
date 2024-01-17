@@ -50,6 +50,7 @@ class Home extends StatelessWidget {
       const ProfileScreen()
     ];
 
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
         showDialog(
