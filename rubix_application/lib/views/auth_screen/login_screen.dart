@@ -5,7 +5,7 @@ import 'package:rubix_application/consts/colors.dart';
 import 'package:rubix_application/consts/lists.dart';
 import 'package:rubix_application/consts/strings.dart';
 import 'package:rubix_application/consts/styles.dart';
-import 'package:rubix_application/home_screen/home.dart';
+import 'package:rubix_application/views/home_screen/home.dart';
 import 'package:rubix_application/views/auth_screen/signup_screen.dart';
 import 'package:rubix_application/widgets_common/applogo_widget.dart';
 import 'package:rubix_application/widgets_common/bg_widget.dart';
