@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:rubix_application/consts/consts.dart';
-import 'package:rubix_application/home.dart';
+import 'package:rubix_application/home_screen/home.dart';
 import 'package:rubix_application/views/auth_screen/login_screen.dart';
 import 'package:rubix_application/widgets_common/applogo_widget.dart';
 

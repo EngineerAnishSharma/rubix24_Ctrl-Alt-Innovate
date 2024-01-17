@@ -6,7 +6,7 @@ import 'package:rubix_application/consts/firebase_const.dart';
 import 'package:rubix_application/consts/strings.dart';
 import 'package:rubix_application/consts/styles.dart';
 import 'package:rubix_application/controller/auth_controller.dart';
-import 'package:rubix_application/home.dart';
+import 'package:rubix_application/home_screen/home.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
