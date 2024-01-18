@@ -6,7 +6,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
-import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
+import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
 
 
 void main() async {
