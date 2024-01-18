@@ -4,11 +4,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
+import 'package:tsec_hack/controller/local_storage.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (await LocalStorage.getBool("is_english", false)) {
+    await Loc.get.initialize(locale: "en");
+  } else {
+    await Loc.get.initialize(locale: "hi");
+  }
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   if (kIsWeb) {

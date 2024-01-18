@@ -6,11 +6,11 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/home_controller.dart';
 import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
+import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
 import 'package:tsec_hack/views/find_jobs/finding_job.dart';
 import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
 import 'package:tsec_hack/widgets_common/community_screen.dart';
 import 'package:tsec_hack/widgets_common/exit_dailog.dart';
-import 'package:tsec_hack/widgets_common/postcard_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -55,6 +55,13 @@ class _HomeState extends State<Home> {
     var navbarBody = [
       const CommunityScreen(),
       const FindingJobScreen(),
+      // const PostCard(
+      //     profilePicture: "https://placekitten.com/200/200",
+      //     userName: "userName",
+      //     content:
+      //         "Lorem Ipsum is a placeholder text commonly used in the printing and typesetting industry. It doesn't carry any meaningful content but is often used to fill space in a document and give an impression of how the final text will look.",
+      //     postimage: "https://placekitten.com/200/200",
+      //     likes: 10),
       const SarathiSupport(),
       const ProfileEditor()
     ];
