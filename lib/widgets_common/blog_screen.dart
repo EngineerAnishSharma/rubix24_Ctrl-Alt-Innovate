@@ -52,6 +52,7 @@ class BlogPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.blue,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -68,11 +69,14 @@ class BlogPost extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  heading,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0, top: 8.0),
+                  child: Text(
+                    heading,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -80,7 +84,7 @@ class BlogPost extends StatelessWidget {
                   subHeading,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.grey,
+                    color: whiteColor,
                   ),
                 ),
               ],
@@ -100,6 +104,7 @@ class MeetingCard extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(16.0),
       child: Card(
+        color: Colors.blue,
         elevation: 4.0,
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -121,7 +126,10 @@ class MeetingCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: Text('January 25, 2024'),
+                subtitle: Text(
+                  'January 25, 2024',
+                  style: TextStyle(color: whiteColor),
+                ),
               ),
               ListTile(
                 title: Text(
@@ -130,7 +138,10 @@ class MeetingCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: Text('3:00 PM - 4:00 PM'),
+                subtitle: Text(
+                  '3:00 PM - 4:00 PM',
+                  style: TextStyle(color: whiteColor),
+                ),
               ),
               ListTile(
                 title: Text(
@@ -139,7 +150,10 @@ class MeetingCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: Text('Project Kickoff'),
+                subtitle: Text(
+                  'Project Kickoff',
+                  style: TextStyle(color: whiteColor),
+                ),
               ),
             ],
           ),

@@ -2,18 +2,54 @@ import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/widgets_common/blog_screen.dart';
 
-class CommunityScreen extends StatelessWidget {
+class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
+
+  @override
+  State<CommunityScreen> createState() => _CommunityScreenState();
+}
+
+class _CommunityScreenState extends State<CommunityScreen> {
+  // final String apiUrl = 'https://96b5-110-172-23-161.ngrok-free.app/';
+
+  // Future<List<Map<String, dynamic>>> getRecommendations(
+  //     String location,
+  //     String language,
+  //     String disability,
+  //     String jobPreference,
+  //     String perks) async {
+  //   String userProfile =
+  //       "$location%20$language%20$jobPreference%20$disability%20$perks";
+
+  //   final response = await http.get(
+  //     Uri.parse('$apiUrl?user_profle=$userProfile'),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   );
+
+  //   if (response.statusCode == 200) {
+  //     // If server returns an OK response, parse the JSON
+  //     List<dynamic> data = json.decode(response.body)['data'];
+  //     List<Map<String, dynamic>> recommendations =
+  //         List<Map<String, dynamic>>.from(data);
+  //     // print(recommendations);
+  //     return recommendations;
+  //   } else {
+  //     // If the server did not return a 200 OK response,
+  //     // throw an exception.
+  //     throw Exception('Failed to load recommendations');
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: lightgolden,
         appBar: AppBar(
-          backgroundColor: redColor,
+          backgroundColor: const Color.fromARGB(255, 110, 80, 243),
           title: const Text(
             'Community',
-            
           ),
           actions: [
             Padding(
@@ -24,21 +60,19 @@ class CommunityScreen extends StatelessWidget {
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(
-                            255, 216, 130, 135)), // Set the background color
+                        Colors.blue), // Set the background color
                   ),
                   child: "Guidance".text.white.make()),
             )
           ],
         ),
         body: ListView.builder(
-          itemCount: 5, // You can adjust the number of blog posts
+          itemCount: 2,
           itemBuilder: (context, index) {
-            return CommunityPostCard(
-              imageUrl:
-                  'https://placekitten.com/200/200', // Replace with your image URL
-              heading: 'Post ${index + 1}',
-              subHeading: 'Subtitle of Post ${index + 1}',
+            return const CommunityPostCard(
+              imageUrl: 'https://placekitten.com/200/200',
+              heading: "post1",
+              subHeading: "subpost",
             );
           },
         ),

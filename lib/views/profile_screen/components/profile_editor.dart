@@ -7,8 +7,10 @@ import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/controller/person_controller.dart';
 import 'package:tsec_hack/views/auth_screen/login_screen.dart';
+import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
 import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
 import 'package:tsec_hack/widgets_common/language_change_dialog.dart';
+import 'package:tsec_hack/widgets_common/our_button.dart';
 
 class ProfileEditor extends StatefulWidget {
   const ProfileEditor({super.key});
@@ -59,8 +61,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                 children: [
                   Text(
                     Loc.get["profile_english"],
-                    style:
-                        const TextStyle(fontSize: 16, color: Color(0xffc0c0c0)),
+                    style: const TextStyle(fontSize: 16, color: Colors.black),
                   ),
                   Switch(
                     value: isEnglish,
@@ -78,7 +79,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
                         side: const BorderSide(
-                      color: whiteColor,
+                      color: Colors.black,
                     )),
                     onPressed: () async {
                       await controller.signoutMethod(context);
@@ -99,7 +100,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     //     MaterialPageRoute(builder: (context) => const LoginScreen()),
                     //   );
                     // },
-                    child: logout.text.white.fontFamily(semibold).make(),
+                    child: logout.text.black.fontFamily(semibold).make(),
                   ),
                 ),
               ),
@@ -183,6 +184,14 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     .shadowOutline()
                     .padding(const EdgeInsets.all(8.0))
                     .make(),
+                10.heightBox,
+                ourButton(
+                    onPress: () {
+                      Get.to(() => const ResumeScreen());
+                    },
+                    textColor: whiteColor,
+                    color1: Colors.blue,
+                    title: "Save"),
               ],
             ),
           )

@@ -45,7 +45,7 @@ class ResumeScreen extends StatelessWidget {
                         'Skills', [data['skills'][0], data['skills'][1]]),
                     _buildInfoCard('Post', data['post']),
                     _buildListCard(
-                        'Perks', [data['perks'][0], data['perks'][1]]),
+                        'Accommodation', [data['perks'][0], data['perks'][1]]),
                   ],
                 ),
               );

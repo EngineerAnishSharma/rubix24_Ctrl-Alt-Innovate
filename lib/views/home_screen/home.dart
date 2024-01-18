@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
           ),
           bottomNavigationBar: CurvedNavigationBar(
             index: controller.currentNavindex.value,
-            color: Colors.orange,
+            color: Colors.blue,
 
             backgroundColor: whiteColor,
             height: 55,
