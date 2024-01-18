@@ -1,4 +1,6 @@
+import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/widgets_common/blog_screen.dart';
 
 class CommunityScreen extends StatelessWidget {
   const CommunityScreen({super.key});
@@ -6,38 +8,46 @@ class CommunityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightgolden,
-      appBar: AppBar(
-        backgroundColor: redColor,
-        title: const Text(
-          'Community',
+        backgroundColor: lightgolden,
+        appBar: AppBar(
+          backgroundColor: redColor,
+          title: const Text(
+            'Community',
+            
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton(
+                  onPressed: () {
+                    Get.to((() => const BlogScreen()));
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(
+                            255, 216, 130, 135)), // Set the background color
+                  ),
+                  child: "Guidance".text.white.make()),
+            )
+          ],
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(
-                          255, 216, 130, 135)), // Set the background color
-                ),
-                child: "Guidance".text.white.make()),
-          )
-        ],
-      ),
-      body: ListView.builder(
-        itemCount: 5, // You can adjust the number of blog posts
-        itemBuilder: (context, index) {
-          return CommunityPostCard(
-            imageUrl:
-                'https://placekitten.com/200/200', // Replace with your image URL
-            heading: 'Post ${index + 1}',
-            subHeading: 'Subtitle of Post ${index + 1}',
-          );
-        },
-      ),
-    );
+        body: ListView.builder(
+          itemCount: 5, // You can adjust the number of blog posts
+          itemBuilder: (context, index) {
+            return CommunityPostCard(
+              imageUrl:
+                  'https://placekitten.com/200/200', // Replace with your image URL
+              heading: 'Post ${index + 1}',
+              subHeading: 'Subtitle of Post ${index + 1}',
+            );
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(
+            Icons.add,
+          ),
+        ));
   }
 }
 
