@@ -69,171 +69,174 @@ class _SarathiSupportState extends State<SarathiSupport> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const MyCard(color: Colors.teal, content: "Know Your Rights")
-                .onTap(() async {
-              HapticFeedback.heavyImpact();
-              await TextToSpeech.speakText("Know Your Rights");
-              Get.to(() => const KnowYourRights());
-            }),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 10.0),
-                    child: Text(
-                      "Government Schemes",
-                      style: GoogleFonts.aBeeZee(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const MyCard(color: Colors.teal, content: "Know Your Rights")
+                  .onTap(() async {
+                HapticFeedback.heavyImpact();
+                await TextToSpeech.speakText("Know Your Rights");
+                Get.to(() => const KnowYourRights());
+              }),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 10.0),
+                      child: Text(
+                        "Government Schemes",
+                        style: GoogleFonts.aBeeZee(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
                         ),
-                      ),
-                    ).text.black.make(),
-                  ),
-                  VxSwiper.builder(
-                      height: 200,
-                      aspectRatio: 16 / 9,
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      itemCount: sliderList.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () async {
-                            switch (index) {
-                              case 0:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "DISHA (Early Intervention and School Readiness Scheme)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/disha.php'));
+                      ).text.black.make(),
+                    ),
+                    VxSwiper.builder(
+                        height: 200,
+                        aspectRatio: 16 / 9,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        itemCount: sliderList.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () async {
+                              switch (index) {
+                                case 0:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "DISHA (Early Intervention and School Readiness Scheme)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/disha.php'));
 
-                              case 1:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "VIKAAS (Day Care)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/vikaas.php'));
-                              case 2:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "SAMARTH (Respite Care)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/samarth.php'));
-                              case 3:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "GHARAUNDA (Group Home for Adults)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/gharaunda.php'));
-                              case 4:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "NIRAMAYA (Health Insurance Scheme)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/niramaya.php'));
-                              case 5:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "SAHYOGI (Caregiver training scheme)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/sahyogi.php'));
-                              case 6:
-                                HapticFeedback.heavyImpact();
-                                await TextToSpeech.speakText(
-                                    "GYAN PRABHA (Educational support)");
-                                _launchUrl(Uri.parse(
-                                    'https://thenationaltrust.gov.in/content/scheme/gyan-prabha.php'));
-                            }
-                          },
-                          child: Image.asset(
-                            sliderList[index],
-                            fit: BoxFit.fill,
-                          )
-                              .box
-                              .rounded
-                              .clip(Clip.antiAlias)
-                              .shadowSm
-                              .margin(const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2.0))
-                              .make(),
-                        );
-                      }),
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 10.0, top: 10.0),
-                    child: Text(
-                      "HelpLine Numbers",
-                      style: GoogleFonts.aBeeZee(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                                case 1:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "VIKAAS (Day Care)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/vikaas.php'));
+                                case 2:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "SAMARTH (Respite Care)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/samarth.php'));
+                                case 3:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "GHARAUNDA (Group Home for Adults)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/gharaunda.php'));
+                                case 4:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "NIRAMAYA (Health Insurance Scheme)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/niramaya.php'));
+                                case 5:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "SAHYOGI (Caregiver training scheme)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/sahyogi.php'));
+                                case 6:
+                                  HapticFeedback.heavyImpact();
+                                  await TextToSpeech.speakText(
+                                      "GYAN PRABHA (Educational support)");
+                                  _launchUrl(Uri.parse(
+                                      'https://thenationaltrust.gov.in/content/scheme/gyan-prabha.php'));
+                              }
+                            },
+                            child: Image.asset(
+                              sliderList[index],
+                              fit: BoxFit.fill,
+                            )
+                                .box
+                                .rounded
+                                .clip(Clip.antiAlias)
+                                .shadowSm
+                                .margin(const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2.0))
+                                .make(),
+                          );
+                        }),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 10.0, top: 10.0),
+                      child: Text(
+                        "HelpLine Numbers",
+                        style: GoogleFonts.aBeeZee(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
                         ),
-                      ),
-                    ).text.black.make(),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const myCard2(
-                        name: "National Disability Helpline",
-                        number: 18001814192,
-                        colore: Colors.yellow,
-                      ).onTap(() async {
-                        HapticFeedback.heavyImpact();
-                        await TextToSpeech.speakText(
-                            "National Disability Helpline");
-                        _makePhoneCall(18001814192.toString());
-                      }),
-                      const myCard2(
-                        name: "Social Justice & Empowerment Helpline",
-                        number: 01124365019,
-                        colore: Colors.pink,
-                      ).onTap(() async {
-                        HapticFeedback.heavyImpact();
-                        await TextToSpeech.speakText(
-                            "Social Justice & Empowerment Helpline");
-                        _makePhoneCall(01124365019.toString());
-                      })
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const myCard2(
-                        name:
-                            "National Institute for Mentally Handicapped (NIMH)",
-                        number: 01126517151,
-                        colore: Colors.green,
-                      ).onTap(() async {
-                        HapticFeedback.heavyImpact();
-                        await TextToSpeech.speakText(
-                            "National Institute for Mentally Handicapped (NIMH)");
-                        _makePhoneCall(01126517151.toString());
-                      }),
-                      const myCard2(
-                        name:
-                            "National Institute for the Visually Handicapped (NIVH)",
-                        number: 01126514606,
-                        colore: Color.fromARGB(255, 188, 80, 231),
-                      ).onTap(() async {
-                        HapticFeedback.heavyImpact();
-                        await TextToSpeech.speakText(
-                            "National Institute for the Visually Handicapped (NIVH)");
-                        _makePhoneCall(01126514606.toString());
-                      })
-                    ],
-                  )
-                ],
+                      ).text.black.make(),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const myCard2(
+                          name: "National Disability Helpline",
+                          number: 18001814192,
+                          colore: Colors.yellow,
+                        ).onTap(() async {
+                          HapticFeedback.heavyImpact();
+                          await TextToSpeech.speakText(
+                              "National Disability Helpline");
+                          _makePhoneCall(18001814192.toString());
+                        }),
+                        const myCard2(
+                          name: "Social Justice & Empowerment Helpline",
+                          number: 01124365019,
+                          colore: Colors.pink,
+                        ).onTap(() async {
+                          HapticFeedback.heavyImpact();
+                          await TextToSpeech.speakText(
+                              "Social Justice & Empowerment Helpline");
+                          _makePhoneCall(01124365019.toString());
+                        })
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const myCard2(
+                          name:
+                              "National Institute for Mentally Handicapped (NIMH)",
+                          number: 01126517151,
+                          colore: Colors.green,
+                        ).onTap(() async {
+                          HapticFeedback.heavyImpact();
+                          await TextToSpeech.speakText(
+                              "National Institute for Mentally Handicapped (NIMH)");
+                          _makePhoneCall(01126517151.toString());
+                        }),
+                        const myCard2(
+                          name:
+                              "National Institute for the Visually Handicapped (NIVH)",
+                          number: 01126514606,
+                          colore: Color.fromARGB(255, 188, 80, 231),
+                        ).onTap(() async {
+                          HapticFeedback.heavyImpact();
+                          await TextToSpeech.speakText(
+                              "National Institute for the Visually Handicapped (NIVH)");
+                          _makePhoneCall(01126514606.toString());
+                        })
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ));
