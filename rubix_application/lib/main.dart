@@ -20,6 +20,13 @@ void main() async {
             messagingSenderId: "543797904930",
             appId: "1:543797904930:web:7c87f73813e2b87ea4ac7b",
             measurementId: "G-FJR687FJPR"));
+            apiKey: "AIzaSyBg-7h5f7toS-IvD7MQRzbHvd7jDi4KOOM",
+            authDomain: "tsec-hackathon-61291.firebaseapp.com",
+            projectId: "tsec-hackathon-61291",
+            storageBucket: "tsec-hackathon-61291.appspot.com",
+            messagingSenderId: "543797904930",
+            appId: "1:543797904930:web:7c87f73813e2b87ea4ac7b",
+            measurementId: "G-FJR687FJPR"));
   } else {
     await Firebase.initializeApp();
   }

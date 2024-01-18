@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:rubix_application/consts/consts.dart';
 
 class CommunityScreen extends StatefulWidget {

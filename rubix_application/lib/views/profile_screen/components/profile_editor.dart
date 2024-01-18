@@ -302,7 +302,7 @@ class _LanguageSectionState extends State<LanguageSection> {
                 ),
               ),
               IconButton(
-                icon: _isEditing ? Icon(Icons.done) : Icon(Icons.edit),
+                icon: _isEditing ? const Icon(Icons.done) : const Icon(Icons.edit),
                 onPressed: () {
                   setState(() {
                     _isEditing = !_isEditing;
