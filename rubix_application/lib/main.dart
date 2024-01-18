@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:rubix_application/consts/colors.dart';
-import 'package:rubix_application/views/auth_screen/login_screen.dart';
+import 'package:rubix_application/views/onboarding_screen/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
-      home: const LoginScreen(),
+      home: const Onboarding(),
     );
   }
 }
