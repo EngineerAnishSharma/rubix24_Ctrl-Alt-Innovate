@@ -8,9 +8,11 @@ import 'package:tsec_hack/controller/home_controller.dart';
 import 'package:tsec_hack/views/community/community_screen.dart';
 import 'package:tsec_hack/views/home_screen/home_screen.dart';
 import 'package:tsec_hack/views/home_screen/job_find.dart';
+import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
 import 'package:tsec_hack/views/profile_screen/profile_screen.dart';
 import 'package:tsec_hack/widgets_common/exit_dailog.dart';
-
+import 'package:tsec_hack/widgets_common/jobcard_widget.dart';
+import 'package:tsec_hack/widgets_common/postcard_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -45,9 +47,26 @@ class Home extends StatelessWidget {
 
     var navbarBody = [
       const HomeScreen(),
-      const FindJobScreen(),
-      const CommunityScreen(),
-      const ProfileScreen()
+      const JobCard(
+        companyLogo:
+            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%2Fimages%3Fk%3Dapple&psig=AOvVaw3W_7plZb6uSzD6MRiSdgDR&ust=1705643459800000&source=images&cd=vfe&ved=0CBMQjRxqFwoTCPi25eig5oMDFQAAAAAdAAAAABAE",
+        companyName: "Apple",
+        jobPosition: "job position",
+        location: "Mumbai,India",
+        jobType: "Hybrid",
+        salary: "30,000",
+        applicants: "45",
+      ),
+      const PostCard(
+          profilePicture:
+              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+          userName: "userName",
+          content:
+              "Lorem Ipsum is a placeholder text commonly used in the printing and typesetting industry. It doesn't carry any meaningful content but is often used to fill space in a document and give an impression of how the final text will look.",
+          postimage:
+              "https://hips.hearstapps.com/hmg-prod/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg",
+          likes: 10),
+      const ProfileEditor()
     ];
 
     // ignore: deprecated_member_use

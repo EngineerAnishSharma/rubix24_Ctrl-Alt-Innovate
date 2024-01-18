@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">543797904930</string>
-    <string name="google_api_key" translatable="false">AIzaSyDCwz3nGBw-oEvTFoNgNVLAbWOV21uwGKw</string>
-    <string name="google_app_id" translatable="false">1:543797904930:android:637c88e9c5da9ce2a4ac7b</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDCwz3nGBw-oEvTFoNgNVLAbWOV21uwGKw</string>
-    <string name="google_storage_bucket" translatable="false">tsec-hackathon-61291.appspot.com</string>
-    <string name="project_id" translatable="false">tsec-hackathon-61291</string>
-</resources>

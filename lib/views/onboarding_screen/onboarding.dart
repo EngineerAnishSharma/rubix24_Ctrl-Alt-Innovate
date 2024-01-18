@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/views/home_screen/home.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -38,12 +39,12 @@ class _TestState extends State<Onboarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/location.png',
+                    'assets/images/onboarding1.png',
                     height: 350,
                     width: 350,
                   ),
                   Text(
-                    "Delivery made easy",
+                    "Where talent takes center stage, not disability.",
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -61,12 +62,12 @@ class _TestState extends State<Onboarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/network.png',
+                    'assets/images/onboarding2.png',
                     height: 350,
                     width: 350,
                   ),
                   Text(
-                    "Delivery made quick",
+                    "Disability is just one part of the story.",
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -77,8 +78,7 @@ class _TestState extends State<Onboarding> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("Sustainable and Eco-friendly delivery at your doorstep",
-                          style: GoogleFonts.lato())
+                  Text("Let Sarathi write the rest.", style: GoogleFonts.lato())
                       .text
                       .white
                       .make(),
@@ -88,12 +88,12 @@ class _TestState extends State<Onboarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/hero.png',
+                    'assets/images/onboarding3.png',
                     height: 350,
                     width: 350,
                   ),
                   Text(
-                    "Delivery is your hero",
+                    "Sarath is your hero",
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -105,7 +105,7 @@ class _TestState extends State<Onboarding> {
                     height: 20,
                   ),
                   Text(
-                    "Reduce your carbon footprint",
+                    "Sarathi: Because everyone deserves a chance to soar.",
                     style: GoogleFonts.lato(),
                   ).text.white.make(),
                 ],
