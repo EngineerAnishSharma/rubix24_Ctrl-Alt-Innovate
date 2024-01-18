@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
+import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
 import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
 void main() async {

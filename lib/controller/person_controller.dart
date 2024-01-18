@@ -37,5 +37,4 @@ class PersonController extends GetxController {
       'perks': perks,
     }, SetOptions(merge: true)); // Use SetOptions to merge with existing data
   }
-
 }

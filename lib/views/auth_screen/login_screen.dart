@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           then((value){
                             if(value!=null){
                               VxToast.show(context, msg: loggedIn);
-                              Get.to(const Onboarding());
+                              Get.to(()=>const Onboarding());
                             }else{
                               controller.isLoading(false);
                             }

@@ -1,3 +1,4 @@
+import 'package:confetti/confetti.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
@@ -14,6 +15,19 @@ class ProfileEditor extends StatefulWidget {
 }
 
 class _ProfileEditorState extends State<ProfileEditor> {
+  late ConfettiController _confettiController;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 5));
+  }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
+  }
   var name = "";
   @override
   Widget build(BuildContext context) {
@@ -24,6 +38,12 @@ class _ProfileEditorState extends State<ProfileEditor> {
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
           30.heightBox,
+          ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              shouldLoop: false,
+              colors: const [Colors.blue, Colors.red, Colors.green],
+            ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -34,9 +54,23 @@ class _ProfileEditorState extends State<ProfileEditor> {
                   color: whiteColor,
                 )),
                 onPressed: () async {
-                  await controller.signoutMethod(context);
-                  Get.offAll(() => const LoginScreen());
-                },
+                await controller.signoutMethod(context);
+                _confettiController.play();
+                Future.delayed(const Duration(seconds: 5), () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  );
+                });
+              },
+                // onPressed: () async {
+                //   await controller.signoutMethod(context);
+                //   // ignore: use_build_context_synchronously
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => const LoginScreen()),
+                //   );
+                // },
                 child: logout.text.white.fontFamily(semibold).make(),
               ),
             ),
