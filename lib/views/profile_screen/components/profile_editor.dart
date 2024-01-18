@@ -3,9 +3,12 @@ import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/controller/auth_controller.dart';
+import 'package:tsec_hack/controller/local_storage.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/controller/person_controller.dart';
 import 'package:tsec_hack/views/auth_screen/login_screen.dart';
 import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
+import 'package:tsec_hack/widgets_common/language_change_dialog.dart';
 
 class ProfileEditor extends StatefulWidget {
   const ProfileEditor({super.key});
@@ -20,7 +23,8 @@ class _ProfileEditorState extends State<ProfileEditor> {
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 5));
+    _confettiController =
+        ConfettiController(duration: const Duration(seconds: 5));
   }
 
   @override
@@ -28,9 +32,13 @@ class _ProfileEditorState extends State<ProfileEditor> {
     _confettiController.dispose();
     super.dispose();
   }
+
   var name = "";
   @override
   Widget build(BuildContext context) {
+    bool isEnglish = false;
+    LocalStorage.getBool("is_english", false)
+        .then((value) => isEnglish = value);
     var controller = Get.put(AuthController());
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 177, 210, 241),
@@ -39,41 +47,63 @@ class _ProfileEditorState extends State<ProfileEditor> {
         child: Column(children: [
           30.heightBox,
           ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
-              shouldLoop: false,
-              colors: const [Colors.blue, Colors.red, Colors.green],
-            ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                    side: const BorderSide(
-                  color: whiteColor,
-                )),
-                onPressed: () async {
-                await controller.signoutMethod(context);
-                _confettiController.play();
-                Future.delayed(const Duration(seconds: 5), () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginScreen()),
-                  );
-                });
-              },
-                // onPressed: () async {
-                //   await controller.signoutMethod(context);
-                //   // ignore: use_build_context_synchronously
-                //   Navigator.push(
-                //     context,
-                //     MaterialPageRoute(builder: (context) => const LoginScreen()),
-                //   );
-                // },
-                child: logout.text.white.fontFamily(semibold).make(),
+            confettiController: _confettiController,
+            blastDirectionality: BlastDirectionality.explosive,
+            shouldLoop: false,
+            colors: const [Colors.blue, Colors.red, Colors.green],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    Loc.get["profile_english"],
+                    style:
+                        const TextStyle(fontSize: 16, color: Color(0xffc0c0c0)),
+                  ),
+                  Switch(
+                    value: isEnglish,
+                    activeColor: const Color(0xff1db4fb),
+                    onChanged: (value) async {
+                      Get.to(() => languageDialog(context));
+                    },
+                  ),
+                ],
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                      color: whiteColor,
+                    )),
+                    onPressed: () async {
+                      await controller.signoutMethod(context);
+                      _confettiController.play();
+                      Future.delayed(const Duration(seconds: 5), () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()),
+                        );
+                      });
+                    },
+                    // onPressed: () async {
+                    //   await controller.signoutMethod(context);
+                    //   // ignore: use_build_context_synchronously
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => const LoginScreen()),
+                    //   );
+                    // },
+                    child: logout.text.white.fontFamily(semibold).make(),
+                  ),
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

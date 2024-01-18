@@ -1,2 +1,9 @@
 Key, en, hi
 home_welcome , welcome, namaste
+
+language_confirm, Confirm, पुष्टिकरन
+language_desc, Changing language will restart the Application Are you sure?, भाषा बदलने से एप्लिकेशन पुनः प्रारंभ हो जाएगा क्या आप निश्चित हैं?
+yes, yes , हाँ
+no , no , नहीं
+
+profile_english, Switch Language to English, भाषा को अंग्रेजी में बदलें
