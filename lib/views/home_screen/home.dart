@@ -6,7 +6,6 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/home_controller.dart';
 import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
-import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
 import 'package:tsec_hack/views/find_jobs/finding_job.dart';
 import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
 import 'package:tsec_hack/widgets_common/community_screen.dart';
