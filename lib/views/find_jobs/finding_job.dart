@@ -1,4 +1,5 @@
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/recommendation_system.dart';
 import 'package:tsec_hack/widgets_common/jobcard_widget.dart';
 
 class FindingJobScreen extends StatefulWidget {
@@ -9,6 +10,32 @@ class FindingJobScreen extends StatefulWidget {
 }
 
 class _FindingJobScreenState extends State<FindingJobScreen> {
+  RecommendationSystem recommendationSystem = RecommendationSystem();
+  @override
+  void initState() {
+    super.initState();
+    // Call the getRecommendations method when the screen initializes
+    _fetchRecommendations();
+  }
+
+  Future<void> _fetchRecommendations() async {
+    try {
+      List<Map<String, dynamic>> recommendations =
+          await recommendationSystem.getRecommendations(
+        'mumbai',
+        'english',
+        'software',
+        'visual',
+        'mentoring',
+      );
+      // Do something with the recommendations
+      print(recommendations);
+    } catch (e) {
+      // Handle errors
+      print('Error: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

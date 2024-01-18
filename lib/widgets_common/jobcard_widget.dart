@@ -21,6 +21,7 @@ class JobCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _JobCardState createState() => _JobCardState();
 }
 
@@ -88,13 +89,13 @@ class _JobCardState extends State<JobCard> {
                       ),
                     ],
                   ),
-                  Spacer(), // Adds space to push the button to the right
+                  const Spacer(), // Adds space to push the button to the right
                   IconButton(
                     onPressed: () {
                       // Show detailed information in a dialog
                       _showDetailedInformation(context);
                     },
-                    icon: Icon(Icons.info),
+                    icon: const Icon(Icons.info),
                   ),
                 ],
               ),
@@ -206,7 +207,7 @@ class _JobCardState extends State<JobCard> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );

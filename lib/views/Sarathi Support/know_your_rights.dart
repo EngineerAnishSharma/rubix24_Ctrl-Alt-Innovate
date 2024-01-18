@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/utils/text_to_speech.dart';
 import 'package:tsec_hack/views/home_screen/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -36,11 +37,11 @@ class _TestState extends State<KnowYourRights> {
           children: [
             PageView(
               controller: _pageController,
-              children: const [
+              children: [
                 Slides(
                     image: "assets/images/Equal Job Opportunities.jpeg",
                     description:
-                        "You have the right to get a job like everyone else. Employers should help you do your job comfortably"),
+                        Loc.get["kyr1"]),
                 Slides(
                     image: "assets/images/No Unfair Treatment.jpeg",
                     description:

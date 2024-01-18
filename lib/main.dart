@@ -8,7 +8,6 @@ import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (await LocalStorage.getBool("is_english", false)) {

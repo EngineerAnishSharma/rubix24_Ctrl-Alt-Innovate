@@ -38,14 +38,14 @@ class _SarathiSupportState extends State<SarathiSupport> {
     ];
   }
 
-  Future<void> _launchUrl(Uri _url) async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
+  Future<void> _launchUrl(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
     }
   }
 
-  void _makePhoneCall(String _num) async {
-    Uri url = Uri.parse("tel:+" + _num);
+  void _makePhoneCall(String num) async {
+    Uri url = Uri.parse("tel:+$num");
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {

@@ -73,7 +73,7 @@ class _PostCardState extends State<PostCard> {
                   onTap: () {},
                   child: Container(
                       width: 30,
-                      margin: EdgeInsets.only(left: 100),
+                      margin: const EdgeInsets.only(left: 100),
                       child: const Image(
                           image: AssetImage('assets/images/addfriend.png'))),
                 ),
@@ -85,7 +85,7 @@ class _PostCardState extends State<PostCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(widget.content),
-                  Container(
+                    Container(
                     child: Text(
                       readmore ? 'Read less' : 'Read more',
                       style: const TextStyle(
