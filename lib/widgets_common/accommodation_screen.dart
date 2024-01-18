@@ -58,16 +58,16 @@ class _AccommodationScreenState extends State<AccommodationScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Accommodation',
+                  'Disability & Accommodation',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -102,6 +102,16 @@ class _AccommodationScreenState extends State<AccommodationScreen> {
                       ],
                     )
                   : Container(),
+            if (!isEditing)
+              Column(
+                children: [
+                  for (var entry in selectedAccommodations.entries)
+                    Text(
+                      '${entry.key}: ${entry.value}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                ],
+              ),
           ],
         ),
       ),

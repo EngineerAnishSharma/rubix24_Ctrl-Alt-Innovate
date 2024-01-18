@@ -1,4 +1,3 @@
-import 'package:alan_voice/alan_voice.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -22,11 +21,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    AlanVoice.addButton(
-      "f1c6d85569470059ccab0ada495ed2ac2e956eca572e1d8b807a3e2338fdd0dc/stage", // Replace with your Alan Studio project key
-      buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
-    );
-    // init home-controller
+    // AlanVoice.addButton(
+    //             "f1c6d85569470059ccab0ada495ed2ac2e956eca572e1d8b807a3e2338fdd0dc/stage", // Replace with your Alan Studio project key
+    //             buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
+    //           );
+    // // init home-controller
     var controller = Get.put(HomeController());
 
     var navbarItem = [
@@ -78,39 +77,48 @@ class _HomeState extends State<Home> {
 
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async {
-        showDialog(
-          barrierDismissible: false,
-          context: context,
-          builder: (context) => exitDialog(context),
-        );
-        return false;
-      },
-      child: Scaffold(
-        body: Column(
-          children: [
-            Obx(() => Expanded(
-                  child: navbarBody.elementAt(controller.currentNavindex.value),
-                )),
-          ],
-        ),
-        bottomNavigationBar: CurvedNavigationBar(
-          index: controller.currentNavindex.value,
-          color: Colors.orange,
+        onWillPop: () async {
+          showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) => exitDialog(context),
+          );
+          return false;
+        },
+        child: Scaffold(
+          body: Column(
+            children: [
+              Obx(() => Expanded(
+                    child:
+                        navbarBody.elementAt(controller.currentNavindex.value),
+                  )),
+            ],
+          ),
+          bottomNavigationBar: CurvedNavigationBar(
+            index: controller.currentNavindex.value,
+            color: Colors.orange,
 
-          backgroundColor: whiteColor,
-          height: 55,
-          animationDuration:
-              const Duration(milliseconds: 500), // Adjust animation duration
-          animationCurve: Curves.easeInOut, // Adjust animation curve
-          items: navbarItem,
-          onTap: (value) {
-            controller.currentNavindex.value = value;
-          },
+            backgroundColor: whiteColor,
+            height: 55,
+            animationDuration:
+                const Duration(milliseconds: 500), // Adjust animation duration
+            animationCurve: Curves.easeInOut, // Adjust animation curve
+            items: navbarItem,
+            onTap: (value) {
+              controller.currentNavindex.value = value;
+            },
 
-          letIndexChange: (index) => true,
-        ),
-      ),
-    );
+            letIndexChange: (index) => true,
+          ),
+          // floatingActionButton: FloatingActionButton(
+          //   onPressed: () {
+          //     AlanVoice.addButton(
+          //       "f1c6d85569470059ccab0ada495ed2ac2e956eca572e1d8b807a3e2338fdd0dc/stage", // Replace with your Alan Studio project key
+          //       buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
+          //     );
+          //   },
+          //   child: const Icon(Icons.question_mark),
+          // ),
+        ));
   }
 }

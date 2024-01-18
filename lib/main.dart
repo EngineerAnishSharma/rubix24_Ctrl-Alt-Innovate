@@ -4,8 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
-import 'package:tsec_hack/views/onboarding_screen/onboarding.dart';
-import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
+import 'package:tsec_hack/views/auth_screen/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +21,7 @@ void main() async {
             appId: "1:543797904930:web:7c87f73813e2b87ea4ac7b",
             measurementId: "G-FJR687FJPR"));
   } else {
-    // await Firebase.initializeApp();
+    await Firebase.initializeApp();
   }
   runApp(const MyApp());
 }
@@ -47,7 +46,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
-      home: const Onboarding(),
+      home: const LoginScreen(),
     );
   }
 }
