@@ -13,15 +13,10 @@ class _FindingJobScreenState extends State<FindingJobScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: lightGrey,
-        appBar: AppBar(
-          title: const Text(
-            "Jobs",
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
+              30.heightBox,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(

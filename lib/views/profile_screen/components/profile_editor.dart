@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/controller/auth_controller.dart';
 import 'package:tsec_hack/controller/person_controller.dart';
+import 'package:tsec_hack/views/auth_screen/login_screen.dart';
 import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
 
 class ProfileEditor extends StatefulWidget {
@@ -16,12 +17,30 @@ class _ProfileEditorState extends State<ProfileEditor> {
   var name = "";
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(AuthController());
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 177, 210, 241),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
           30.heightBox,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    side: const BorderSide(
+                  color: whiteColor,
+                )),
+                onPressed: () async {
+                  await controller.signoutMethod(context);
+                  Get.offAll(() => const LoginScreen());
+                },
+                child: logout.text.white.fontFamily(semibold).make(),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
