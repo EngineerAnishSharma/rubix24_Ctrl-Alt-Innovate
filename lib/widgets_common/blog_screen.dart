@@ -27,7 +27,10 @@ class BlogScreen extends StatelessWidget {
             heading: 'Sample Blog Post 2',
             subHeading: 'Subtitle of the second blog post',
           ),
+
           // Add more BlogPost widgets as needed
+          MeetingCard(),
+          MeetingCard()
         ],
       ),
     );
@@ -84,6 +87,63 @@ class BlogPost extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MeetingCard extends StatelessWidget {
+  const MeetingCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Card(
+        elevation: 4.0,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Meeting Details',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16),
+              ListTile(
+                title: Text(
+                  'Date:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text('January 25, 2024'),
+              ),
+              ListTile(
+                title: Text(
+                  'Time:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text('3:00 PM - 4:00 PM'),
+              ),
+              ListTile(
+                title: Text(
+                  'Topic:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text('Project Kickoff'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
