@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "543797904930",
+      "project_id": "tsec-hackathon-61291",
+      "storage_bucket": "tsec-hackathon-61291.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:543797904930:android:637c88e9c5da9ce2a4ac7b",
+          "android_client_info": {
+            "package_name": "com.example.rubix_application"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDCwz3nGBw-oEvTFoNgNVLAbWOV21uwGKw"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
