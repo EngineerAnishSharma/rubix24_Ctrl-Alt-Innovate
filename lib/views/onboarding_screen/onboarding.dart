@@ -43,15 +43,18 @@ class _TestState extends State<Onboarding> {
                     height: 350,
                     width: 350,
                   ),
-                  Text(
-                    "Where talent takes center stage, not disability.",
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Where talent takes center stage, not disability.",
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28,
+                        ),
                       ),
-                    ),
-                  ).text.white.make(),
+                    ).text.white.make(),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -66,15 +69,18 @@ class _TestState extends State<Onboarding> {
                     height: 350,
                     width: 350,
                   ),
-                  Text(
-                    "Disability is just one part of the story.",
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Disability is just one part of the story.",
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28,
+                        ),
                       ),
-                    ),
-                  ).text.white.make(),
+                    ).text.white.make(),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -93,7 +99,7 @@ class _TestState extends State<Onboarding> {
                     width: 350,
                   ),
                   Text(
-                    "Sarath is your hero",
+                    "Sarathi is your hero",
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,

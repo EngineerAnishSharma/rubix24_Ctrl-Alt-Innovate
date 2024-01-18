@@ -1,5 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
 
 class ProfileEditor extends StatefulWidget {
   const ProfileEditor({super.key});
@@ -87,7 +88,15 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     .clip(Clip.antiAlias)
                     .shadowOutline()
                     .padding(const EdgeInsets.all(8.0))
-                    .make()
+                    .make(),
+                10.heightBox,
+                const AccommodationScreen()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .padding(const EdgeInsets.all(8.0))
+                    .make(),
               ],
             ),
           )
