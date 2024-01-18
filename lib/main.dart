@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
+import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
 import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
 
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
-      home: const SplashScreen(),
+      home: const ResumeScreen(),
     );
   }
 }
