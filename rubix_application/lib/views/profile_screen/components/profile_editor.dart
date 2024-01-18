@@ -12,46 +12,85 @@ class ProfileEditor extends StatefulWidget {
 }
 
 class _ProfileEditorState extends State<ProfileEditor> {
+  var name = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightGrey,
+      backgroundColor: const Color.fromARGB(255, 177, 210, 241),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
-          20.heightBox,
-          Align(
-            alignment: Alignment.topCenter,
-            child: Image.asset(
-              imgProfile,
-              width: 100,
-              fit: BoxFit.cover,
-            ).box.roundedFull.clip(Clip.antiAlias).make(),
+          30.heightBox,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Image.asset(
+                imgProfile2,
+                width: 150,
+                fit: BoxFit.cover,
+              ).box.roundedFull.clip(Clip.antiAlias).make(),
+            ),
           ),
+          5.heightBox,
+          Text(name.isEmptyOrNull ? name : ""),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                BioSection()
+                const BioSection()
                     .box
                     .rounded
                     .clip(Clip.antiAlias)
                     .shadowOutline()
                     .make(),
                 const SizedBox(height: 10),
-                const UserDetailsCard(),
+                const UserDetailsCard()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .make(),
                 const SizedBox(height: 10),
-                const ResumeSection(),
+                const ResumeSection()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .padding(const EdgeInsets.all(8.0))
+                    .make(),
                 10.heightBox,
-                const SkillsSection(),
+                const SkillsSection()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .make(),
                 10.heightBox,
-                const EducationSection(),
+                const EducationSection()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .make(),
                 10.heightBox,
-                CareerPreferencesSection(),
+                const CareerPreferencesSection()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .padding(const EdgeInsets.all(8.0))
+                    .make(),
                 10.heightBox,
-                LanguageSection()
+                const LanguageSection()
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .shadowOutline()
+                    .padding(const EdgeInsets.all(8.0))
+                    .make()
               ],
             ),
           )
@@ -91,7 +130,9 @@ class _BioSectionState extends State<BioSection> {
                 ),
               ),
               IconButton(
-                icon: const Icon(Icons.edit),
+                icon: _isEditing
+                    ? const Icon(Icons.done)
+                    : const Icon(Icons.edit),
                 onPressed: () {
                   setState(() {
                     _isEditing = !_isEditing;
@@ -139,6 +180,7 @@ class UserDetailsCard extends StatefulWidget {
 }
 
 class _UserDetailsCardState extends State<UserDetailsCard> {
+  final TextEditingController nameController1 = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -166,7 +208,9 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.edit),
+                  icon: _isEditing
+                      ? const Icon(Icons.done)
+                      : const Icon(Icons.edit),
                   onPressed: () {
                     setState(() {
                       _isEditing = !_isEditing;
@@ -176,6 +220,11 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
               ],
             ),
             const SizedBox(height: 20),
+            TextField(
+              controller: nameController1,
+              enabled: _isEditing,
+              decoration: const InputDecoration(labelText: 'Name'),
+            ),
             TextField(
               controller: nameController,
               enabled: _isEditing,
@@ -467,6 +516,7 @@ class CareerPreferencesSection extends StatefulWidget {
   const CareerPreferencesSection({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CareerPreferencesSectionState createState() =>
       _CareerPreferencesSectionState();
 }

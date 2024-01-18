@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -90,7 +89,7 @@ class AuthController extends GetxController {
       String username = extractUsername(email!);
       String password = generateRandomPassword(8);
       // Store the username using SharedPreferences
-      // storeUsername(username);
+      storeUsername(username);
 
       storeUserData(name: username, email: email, password: password);
       // Your additional logic here...
@@ -140,6 +139,8 @@ class AuthController extends GetxController {
 
   //Storing data
   storeUserData({name, password, email}) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('username', name);
     DocumentReference store =
         firestore.collection(userCollection).doc(currentUser!.uid);
     store.set({
@@ -148,11 +149,11 @@ class AuthController extends GetxController {
       'email': email,
       'id': currentUser!.uid,
       'language': "",
-      'age':"",
-      'level':"",
-      'journey':"",
-      'daily_target':"",
-      'record':""
+      'age': "",
+      'level': "",
+      'journey': "",
+      'daily_target': "",
+      'record': ""
     });
   }
 

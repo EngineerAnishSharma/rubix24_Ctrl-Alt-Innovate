@@ -8,6 +8,7 @@ import 'package:rubix_application/controller/home_controller.dart';
 import 'package:rubix_application/views/community/community_screen.dart';
 import 'package:rubix_application/views/home_screen/home_screen.dart';
 import 'package:rubix_application/views/home_screen/job_find.dart';
+import 'package:rubix_application/views/profile_screen/components/profile_editor.dart';
 import 'package:rubix_application/views/profile_screen/profile_screen.dart';
 import 'package:rubix_application/widgets_common/exit_dailog.dart';
 
@@ -47,7 +48,8 @@ class Home extends StatelessWidget {
       const HomeScreen(),
       const FindJobScreen(),
       const CommunityScreen(),
-      const ProfileScreen()
+      // const ProfileScreen()
+      const ProfileEditor()
     ];
 
     return WillPopScope(
