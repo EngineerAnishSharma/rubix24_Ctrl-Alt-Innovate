@@ -7,6 +7,7 @@ import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/home_controller.dart';
 import 'package:tsec_hack/views/home_screen/home_screen.dart';
 import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
+import 'package:tsec_hack/widgets_common/community_screen.dart';
 import 'package:tsec_hack/widgets_common/exit_dailog.dart';
 import 'package:tsec_hack/widgets_common/jobcard_widget.dart';
 import 'package:tsec_hack/widgets_common/postcard_widget.dart';
@@ -52,7 +53,7 @@ class _HomeState extends State<Home> {
     ];
 
     var navbarBody = [
-      const HomeScreen(),
+      const CommunityScreen(),
       const JobCard(
         companyLogo:
             "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%2Fimages%3Fk%3Dapple&psig=AOvVaw3W_7plZb6uSzD6MRiSdgDR&ust=1705643459800000&source=images&cd=vfe&ved=0CBMQjRxqFwoTCPi25eig5oMDFQAAAAAdAAAAABAE",
