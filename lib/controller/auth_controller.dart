@@ -147,12 +147,12 @@ class AuthController extends GetxController {
       'password': password,
       'email': email,
       'id': currentUser!.uid,
-      'language': "",
-      'age':"",
-      'level':"",
-      'journey':"",
-      'daily_target':"",
-      'record':""
+      'post': "",
+      'location':"",
+      'language':"",
+      'skills':[],
+      'disabled_inclusive':"",
+      'perks':[]
     });
   }
 

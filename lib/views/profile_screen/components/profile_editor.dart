@@ -1,5 +1,8 @@
 import 'package:file_picker/file_picker.dart';
+import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/auth_controller.dart';
+import 'package:tsec_hack/controller/person_controller.dart';
 import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
 
 class ProfileEditor extends StatefulWidget {
@@ -187,13 +190,13 @@ class UserDetailsCard extends StatefulWidget {
 
 class _UserDetailsCardState extends State<UserDetailsCard> {
   final TextEditingController nameController1 = TextEditingController();
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController postController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
 
   bool _isEditing = false;
-
+  var controller1 = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -220,6 +223,10 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
                   onPressed: () {
                     setState(() {
                       _isEditing = !_isEditing;
+                      PersonController.setUserPost(
+                          postController.text.toString());
+                      PersonController.setUserLocation(
+                          addressController.text.toString());
                     });
                   },
                 ),
@@ -232,7 +239,7 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
               decoration: const InputDecoration(labelText: 'Name'),
             ),
             TextField(
-              controller: nameController,
+              controller: postController,
               enabled: _isEditing,
               decoration: const InputDecoration(labelText: 'Fresher'),
             ),
@@ -271,6 +278,7 @@ class LanguageSection extends StatefulWidget {
 
 class _LanguageSectionState extends State<LanguageSection> {
   List<Language> languages = [];
+  List<String> lang = [];
   TextEditingController languageController = TextEditingController();
   bool _isEditing = false;
 
@@ -279,6 +287,7 @@ class _LanguageSectionState extends State<LanguageSection> {
     if (language.isNotEmpty) {
       setState(() {
         languages.add(Language(language, proficiency: Proficiency.Basic));
+        lang.add(language);
       });
       languageController.clear();
     }
@@ -287,6 +296,7 @@ class _LanguageSectionState extends State<LanguageSection> {
   void removeLanguage(Language language) {
     setState(() {
       languages.remove(language);
+      lang.remove(language.toString());
     });
   }
 
@@ -314,6 +324,7 @@ class _LanguageSectionState extends State<LanguageSection> {
                 onPressed: () {
                   setState(() {
                     _isEditing = !_isEditing;
+                    PersonController.setUserLanguage(lang);
                   });
                 },
               ),
@@ -715,6 +726,7 @@ class _SkillsSectionState extends State<SkillsSection> {
     if (skill.isNotEmpty && !skills.contains(skill)) {
       setState(() {
         skills.add(skill);
+        PersonController.setUserSkills(skills);
       });
       skillController.clear();
     }

@@ -156,7 +156,7 @@ class _JobCardState extends State<JobCard> {
                   // Handle button press
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xffA1EEBD),
+                  backgroundColor: const Color(0xffA1EEBD),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   shape: RoundedRectangleBorder(
@@ -188,7 +188,7 @@ class _JobCardState extends State<JobCard> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Detailed Information'),
+          title: const Text('Detailed Information'),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,

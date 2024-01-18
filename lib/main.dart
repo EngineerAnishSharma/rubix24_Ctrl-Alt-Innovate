@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
-import 'package:tsec_hack/views/home_screen/home.dart';
+import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
-      home: const Home(),
+      home: const SplashScreen(),
     );
   }
 }
