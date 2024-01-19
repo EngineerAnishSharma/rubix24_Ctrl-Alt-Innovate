@@ -55,8 +55,8 @@ class _JobCardState extends State<JobCard> {
                       ),
                     ),
                     child: ClipOval(
-                      child: Image.network(
-                        widget.companyLogo,
+                      child: Image.asset(
+                        'assets/images/b.jpg',
                         width: 70,
                         height: 70,
                         fit: BoxFit.cover,

@@ -125,8 +125,8 @@ class _PostCardState extends State<PostCard> {
                 width: 2.5, // Optional border width
               ),
             ),
-            child: Image.network(
-              widget.postimage,
+            child: Image.asset(
+              'assets/images/a.jpg',
               fit: BoxFit.cover,
             ),
           ),

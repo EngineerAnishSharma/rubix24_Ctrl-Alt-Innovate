@@ -52,12 +52,12 @@ class _ProfileEditorState extends State<ProfileEditor> {
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
           40.heightBox,
-          ConfettiWidget(
-            confettiController: _confettiController,
-            blastDirectionality: BlastDirectionality.explosive,
-            shouldLoop: false,
-            colors: const [Colors.blue, Colors.red, Colors.green],
-          ),
+          // ConfettiWidget(
+          //   confettiController: _confettiController,
+          //   blastDirectionality: BlastDirectionality.explosive,
+          //   shouldLoop: false,
+          //   colors: const [Colors.blue, Colors.red, Colors.green],
+          // ),
           Container(
             padding: const EdgeInsets.all(8.0),
             child: Align(
