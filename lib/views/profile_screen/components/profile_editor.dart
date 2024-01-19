@@ -142,7 +142,7 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     },
                     textColor: whiteColor,
                     color1: Colors.blue,
-                    title: "Save"),
+                    title: Loc.get["बचाना"]),
               ],
             ),
           ),
@@ -251,7 +251,7 @@ class _BioSectionState extends State<BioSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Bio',
+                Loc.get["bio"],
                 style: GoogleFonts.aBeeZee(fontSize: 20),
               ),
               IconButton(
@@ -272,7 +272,7 @@ class _BioSectionState extends State<BioSection> {
                   controller: _bioController,
                   maxLines: 3,
                   decoration: InputDecoration(
-                    hintText: 'Write your bio here...',
+                    hintText: Loc.get["bio_hint"],
                     hintStyle: GoogleFonts.aBeeZee(fontSize: 14),
                     border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
@@ -330,7 +330,7 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'User Details',
+                  Loc.get["bio"],
                   style: GoogleFonts.aBeeZee(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -355,30 +355,30 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
             TextField(
               controller: nameController1,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(labelText: Loc.get["name"]),
             ),
             TextField(
               controller: postController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Fresher'),
+              decoration: InputDecoration(labelText: Loc.get["fresher"]),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             TextField(
               controller: addressController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Address'),
+              decoration: InputDecoration(labelText: Loc.get["address"]),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             TextField(
               controller: emailController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: Loc.get["email"]),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             TextField(
               controller: phoneController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Phone Number'),
+              decoration: InputDecoration(labelText: Loc.get["phone"]),
             ),
           ],
         ),
@@ -432,7 +432,7 @@ class _LanguageSectionState extends State<LanguageSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Language Proficiency',
+                Loc.get["language_p"],
                 style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -567,7 +567,7 @@ class _EducationSectionState extends State<EducationSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Education',
+                Loc.get["education"],
                 style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -704,7 +704,7 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Career Preferences',
+                Loc.get['career'],
                 style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -804,7 +804,7 @@ class _ResumeSectionState extends State<ResumeSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Attach Resume (PDF)',
+            Loc.get["resume"],
             style: GoogleFonts.aBeeZee(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -868,7 +868,7 @@ class _SkillsSectionState extends State<SkillsSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Key Skills',
+            Loc.get["skills"],
             style: GoogleFonts.aBeeZee(
               fontSize: 20,
               fontWeight: FontWeight.bold,

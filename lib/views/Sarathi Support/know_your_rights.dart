@@ -40,44 +40,34 @@ class _TestState extends State<KnowYourRights> {
               children: [
                 Slides(
                     image: "assets/images/Equal Job Opportunities.jpeg",
-                    description:
-                        Loc.get["kyr1"]),
+                    description: Loc.get["kyr1"]),
                 Slides(
                     image: "assets/images/No Unfair Treatment.jpeg",
-                    description:
-                        "People cannot treat you badly because of your disability. This includes schools, hospitals, and other public places"),
+                    description: Loc.get["kyr2"]),
                 Slides(
                     image: "assets/images/Easy Access Everywhere.jpeg",
-                    description:
-                        "Buildings, transport, and information should be easy for you to use. People should make places and websites accessible for you"),
+                    description: Loc.get["kyr3"]),
                 Slides(
                     image: "assets/images/Education for Everyone.jpeg",
-                    description:
-                        "You have the right to go to school like any other person. Schools should help you learn, and teachers should understand your needs"),
+                    description: Loc.get["kyr4"]),
                 Slides(
                     image: "assets/images/Financial Help if Needed.jpeg",
-                    description:
-                        "If you need money or support, there are programs to help you. The government provides assistance for your well-being"),
+                    description: Loc.get["kyr5"]),
                 Slides(
                     image: "assets/images/Government Job Opportunities.jpeg",
-                    description:
-                        "You have the chance to work for the government. There are reserved positions to make sure you get a fair opportunity"),
+                    description: Loc.get["kyr6"]),
                 Slides(
                     image: "assets/images/Make Your Own Decisions.jpeg",
-                    description:
-                        "You have the right to decide things for yourself, like getting married or managing your money"),
+                    description: Loc.get["kyr7"]),
                 Slides(
                     image: "assets/images/Understandable Information.jpeg",
-                    description:
-                        "People should give you information in a way you can understand. This could be through Braille, sign language, or other helpful methods"),
+                    description: Loc.get["kyr8"]),
                 Slides(
                     image: "assets/images/Good Health Services.jpeg",
-                    description:
-                        "You should get good healthcare that meets your needs. Special hospitals and services are there for you"),
+                    description: Loc.get["kyr9"]),
                 Slides(
                     image: "assets/images/Protection from Harm.jpeg",
-                    description:
-                        "No one should hurt or exploit you. Laws are there to keep you safe from violence and abuse"),
+                    description: Loc.get["kyr10"]),
               ],
             ),
             Positioned(
