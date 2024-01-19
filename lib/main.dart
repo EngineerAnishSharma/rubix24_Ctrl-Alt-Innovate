@@ -6,8 +6,15 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
+import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
+import 'package:tsec_hack/views/auth_screen/login_screen.dart';
 import 'package:tsec_hack/views/home_screen/home.dart';
-import 'package:tsec_hack/views/profile_screen/components/apply_screen.dart';
+import 'package:tsec_hack/views/profile_screen/components/edit_profile_screen.dart';
+import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
+import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
+import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
+import 'package:tsec_hack/widgets_common/community_screen.dart';
+import 'package:tsec_hack/widgets_common/postcard_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,20 +48,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.transparent,
-        appBarTheme: const AppBarTheme(
-          // set the bar
-          iconTheme: IconThemeData(
-            color: darkFontGrey,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.transparent,
+          appBarTheme: const AppBarTheme(
+            // set the bar
+            iconTheme: IconThemeData(
+              color: darkFontGrey,
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
           ),
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
         ),
-      ),
-      home: const JobApplicationForm(),
-    );
+        home: const SplashScreen());
   }
 }

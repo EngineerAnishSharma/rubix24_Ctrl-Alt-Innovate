@@ -43,7 +43,7 @@ class _SignupScreenState extends State<SignupScreen> {
               (context.screenHeight*0.1).heightBox,
               applogoWidget(),
               10.heightBox,// SizedBox
-              "Join the $appname".text.fontFamily(bold).white.size(18).make(), //Text
+              "Join the Sarathi".text.fontFamily(bold).white.size(18).make(), //Text
               15.heightBox,
               Obx(()=>
                   Column(

@@ -44,10 +44,11 @@ class _TestState extends State<Onboarding> {
                     width: 350,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 16.0),
                     child: Text(
                       "Where talent takes center stage, not disability.",
-                      style: GoogleFonts.lato(
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.aBeeZee(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 28,
@@ -58,7 +59,7 @@ class _TestState extends State<Onboarding> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("", style: GoogleFonts.lato()),
+                  Text("", style: GoogleFonts.aBeeZee()),
                 ],
               ),
               Column(
@@ -70,10 +71,10 @@ class _TestState extends State<Onboarding> {
                     width: 350,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 16.0),
                     child: Text(
                       "Disability is just one part of the story.",
-                      style: GoogleFonts.lato(
+                      style: GoogleFonts.aBeeZee(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 28,
@@ -84,7 +85,8 @@ class _TestState extends State<Onboarding> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("Let Sarathi write the rest.", style: GoogleFonts.lato())
+                  Text("Let Sarathi write the rest.",
+                          style: GoogleFonts.aBeeZee(fontSize: 16))
                       .text
                       .white
                       .make(),
@@ -100,7 +102,7 @@ class _TestState extends State<Onboarding> {
                   ),
                   Text(
                     "Sarathi is your hero",
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.aBeeZee(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
@@ -112,7 +114,7 @@ class _TestState extends State<Onboarding> {
                   ),
                   Text(
                     "Sarathi: Because everyone deserves a chance to soar.",
-                    style: GoogleFonts.lato(),
+                    style: GoogleFonts.aBeeZee(fontSize: 14),
                   ).text.white.make(),
                 ],
               ),

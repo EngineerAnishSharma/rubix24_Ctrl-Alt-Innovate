@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tsec_hack/consts/colors.dart';
@@ -23,7 +22,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  var controller=Get.put(AuthController());
+  var controller = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return bgWidget(Scaffold(
@@ -31,43 +30,51 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
           child: Column(
             children: [
-              (context.screenHeight*0.1).heightBox,
+              (context.screenHeight * 0.1).heightBox,
               applogoWidget(),
-              10.heightBox,// SizedBox
-              "Log in to $appname".text.fontFamily(bold).white.size(18).make(), //Text
+              10.heightBox, // SizedBox
+              "Log in to Sarathi"
+                  .text
+                  .fontFamily(bold)
+                  .white
+                  .size(18)
+                  .make(), //Text
               15.heightBox,
-              Obx(()=>
-                  Column(
+              Obx(
+                () => Column(
                   children: [
-                    customTextField(email,emailHint,controller.emailController,false),
-                    customTextField(password, passwordHint,controller.passwordController,true),
+                    customTextField(
+                        email, emailHint, controller.emailController, false),
+                    customTextField(password, passwordHint,
+                        controller.passwordController, true),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: TextButton(onPressed: (){
-
-                      }, child: const Text(forgetPass)),
+                      child: TextButton(
+                          onPressed: () {}, child: const Text(forgetPass)),
                     ),
                     5.heightBox,
-                    controller.isLoading.value? const CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation(redColor),
-                    ):ourButton(
-                        color1: redColor,
-                        title: login,
-                        textColor: whiteColor,
-                        onPress: () async{
-                          controller.isLoading(true);
+                    controller.isLoading.value
+                        ? const CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation(redColor),
+                          )
+                        : ourButton(
+                            color1: redColor,
+                            title: login,
+                            textColor: whiteColor,
+                            onPress: () async {
+                              controller.isLoading(true);
 
-                          await controller.loginMethod(context: context).
-                          then((value){
-                            if(value!=null){
-                              VxToast.show(context, msg: loggedIn);
-                              Get.to(()=>const Onboarding());
-                            }else{
-                              controller.isLoading(false);
-                            }
-                          });
-                        })
-                        .box.width(context.screenWidth-50).make(),
+                              await controller
+                                  .loginMethod(context: context)
+                                  .then((value) {
+                                if (value != null) {
+                                  VxToast.show(context, msg: loggedIn);
+                                  Get.to(() => const Onboarding());
+                                } else {
+                                  controller.isLoading(false);
+                                }
+                              });
+                            }).box.width(context.screenWidth - 50).make(),
                     5.heightBox,
                     createNewAccount.text.color(fontGrey).make(),
                     5.heightBox,
@@ -75,44 +82,55 @@ class _LoginScreenState extends State<LoginScreen> {
                         color1: lightgolden,
                         title: signup,
                         textColor: redColor,
-                        onPress: (){
-                          Get.to(()=>const SignupScreen());
-                        })
-                        .box.width(context.screenWidth-50).make(),
+                        onPress: () {
+                          Get.to(() => const SignupScreen());
+                        }).box.width(context.screenWidth - 50).make(),
                     10.heightBox,
                     loginWith.text.color(fontGrey).make(),
                     5.heightBox,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(socialIconList.length, (index) => Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
-                          onTap: () async {
-                                      switch (index) {
-                                        case 0:
-                                          break;
-                                        case 1:
-                                          controller.isLoading(true);
-                                          await controller.signInWithGoogle();
-                                          controller.isLoading(false);
-                                          Get.to(() => const Onboarding());
-                                          break;
-                                        case 2:
-                                          break;
-                                        default:
-                                          break;
-                                      }
-                                    },
-                          child: CircleAvatar(
-                            radius: 25,
-                            backgroundColor: lightGrey,
-                            child: Image.asset(socialIconList[index],width: 30,),
-                          ),
-                        ),
-                      )),
+                      children: List.generate(
+                          socialIconList.length,
+                          (index) => Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    switch (index) {
+                                      case 0:
+                                        break;
+                                      case 1:
+                                        controller.isLoading(true);
+                                        await controller.signInWithGoogle();
+                                        controller.isLoading(false);
+                                        Get.to(() => const Onboarding());
+                                        break;
+                                      case 2:
+                                        break;
+                                      default:
+                                        break;
+                                    }
+                                  },
+                                  child: CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor: lightGrey,
+                                    child: Image.asset(
+                                      socialIconList[index],
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                              )),
                     )
                   ],
-                ).box.rounded.white.padding(const EdgeInsets.all(16)).width(context.screenWidth-70).shadowSm.make(),
+                )
+                    .box
+                    .rounded
+                    .white
+                    .padding(const EdgeInsets.all(16))
+                    .width(context.screenWidth - 70)
+                    .shadowSm
+                    .make(),
               ),
             ],
           ),
