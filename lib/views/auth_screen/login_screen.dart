@@ -4,6 +4,7 @@ import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/consts/lists.dart';
 import 'package:tsec_hack/consts/strings.dart';
 import 'package:tsec_hack/consts/styles.dart';
+import 'package:tsec_hack/doctorApp/doctor_login.dart';
 import 'package:tsec_hack/views/auth_screen/signup_screen.dart';
 import 'package:tsec_hack/views/onboarding_screen/onboarding.dart';
 import 'package:tsec_hack/widgets_common/applogo_widget.dart';
@@ -132,6 +133,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     .shadowSm
                     .make(),
               ),
+              20.heightBox,
+                "Are you Recruiters?".text.black.size(20).make(),
+                5.heightBox,
+                ourButton(
+                    onPress: () {
+                      Get.to(() => const DoctorLogin());
+                    },
+                    color1: lightgolden,
+                    textColor: redColor,
+                    title: "Go there")
             ],
           ),
         ),

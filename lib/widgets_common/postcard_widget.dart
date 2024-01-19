@@ -53,7 +53,7 @@ class _PostCardState extends State<PostCard> {
                     ),
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/icons/profile.png',
+                        'assets/images/c.jpg',
                         width: 20,
                         height: 20,
                         fit: BoxFit.cover,
