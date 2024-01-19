@@ -7,7 +7,7 @@ import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
 
-import 'package:tsec_hack/views/home_screen/home.dart';
+import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
 
 
 void main() async {
@@ -55,6 +55,6 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
         ),
-        home: const Home());
+        home: const SplashScreen());
   }
 }

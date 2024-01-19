@@ -52,10 +52,10 @@ class _PostCardState extends State<PostCard> {
                       ),
                     ),
                     child: ClipOval(
-                      child: Image.network(
-                        widget.profilePicture,
-                        width: 30,
-                        height: 30,
+                      child: Image.asset(
+                        'assets/icons/profile.png',
+                        width: 20,
+                        height: 20,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -106,13 +106,11 @@ class _PostCardState extends State<PostCard> {
                       readmore = !readmore;
                     });
                   },
-                  child: Container(
-                    child: Text(
-                      readmore ? 'Read less' : 'Read more',
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  child: Text(
+                    readmore ? 'Read less' : 'Read more',
+                    style: const TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

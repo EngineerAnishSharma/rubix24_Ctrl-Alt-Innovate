@@ -23,8 +23,12 @@ class _JobApplicationFormState extends State<JobApplicationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Job Application Form'),
+        title: const Text(
+          'Job Application Form',
+          style: TextStyle(color: fontGrey),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
