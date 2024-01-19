@@ -1,19 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-FirebaseAuth auth=FirebaseAuth.instance; // Authenatication
-FirebaseFirestore firestore=FirebaseFirestore.instance; // Firebase storage
-User? currentUser=auth.currentUser; // Fetching users data and checking
+FirebaseAuth auth = FirebaseAuth.instance; // Authenatication
+FirebaseFirestore firestore = FirebaseFirestore.instance; // Firebase storage
+User? currentUser = auth.currentUser; // Fetching users data and checking
 
 //collections - Users info
-const userCollection="users";
+const userCollection = "users";
 
-const productsCollection="products";
+const postCollection = "post";
 
-const cartCollection="cart";
+const productsCollection = "products";
 
-const chatCollection="chat";
+const cartCollection = "cart";
 
-const messagesCollection="messages";
+const chatCollection = "chat";
 
-const ordersCollection="orders";
+const messagesCollection = "messages";
+
+const ordersCollection = "orders";

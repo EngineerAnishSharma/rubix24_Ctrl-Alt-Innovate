@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/views/profile_screen/components/apply_screen.dart';
 

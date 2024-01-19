@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/services/firestore_services.dart';
 import 'package:tsec_hack/widgets_common/blog_screen.dart';
 import 'package:tsec_hack/widgets_common/postcard_widget.dart';
 
@@ -81,25 +82,45 @@ class _CommunityScreenState extends State<CommunityScreen> {
             ),
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ListView.builder(
+        body: StreamBuilder(
+          stream: FirestoreServices.getPost(),
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (!snapshot.hasData) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(redColor),
+                ),
+              );
+            } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+              return const Center(
+                child: Text('No data available'),
+              );
+            } else {
+              List<PostCardData> postcards = snapshot.data!.docs.map((doc) {
+                return PostCardData(
+                    profilePicture: doc['image_url'],
+                    userName: doc['name'],
+                    content: doc['content'],
+                    postimage: doc['post_url'],
+                    likes: int.parse(doc['likes'] ?? '0'));
+              }).toList();
+
+              return ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
                 itemCount: postcards.length,
                 itemBuilder: (context, index) {
                   return PostCard(
-                    profilePicture: postcards[index].profilePicture,
+                    profilePicture: "https://placekitten.com/200/200",
                     userName: postcards[index].userName,
                     content: postcards[index].content,
-                    postimage: postcards[index].postimage,
+                    postimage: "https://placekitten.com/200/200",
                     likes: postcards[index].likes,
                   );
                 },
-              ),
-            ],
-          ),
+              );
+            }
+          },
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},

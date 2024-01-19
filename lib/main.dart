@@ -6,15 +6,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/controller/local_storage.dart';
 import 'package:tsec_hack/controller/localization_controller.dart';
-import 'package:tsec_hack/views/Sarathi%20Support/sarathi_support.dart';
-import 'package:tsec_hack/views/auth_screen/login_screen.dart';
+
 import 'package:tsec_hack/views/home_screen/home.dart';
-import 'package:tsec_hack/views/profile_screen/components/edit_profile_screen.dart';
-import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
-import 'package:tsec_hack/views/profile_screen/components/profile_editor.dart';
-import 'package:tsec_hack/views/splash_screen/splash_screen.dart';
-import 'package:tsec_hack/widgets_common/community_screen.dart';
-import 'package:tsec_hack/widgets_common/postcard_widget.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -61,6 +55,6 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
         ),
-        home: const SplashScreen());
+        home: const Home());
   }
 }
