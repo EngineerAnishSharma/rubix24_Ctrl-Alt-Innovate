@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/controller/profile_controller.dart';
 import 'package:tsec_hack/widgets_common/bg_widget.dart';
 import 'package:tsec_hack/widgets_common/custome_textfield.dart';
@@ -43,7 +44,7 @@ class EditProfileScreen extends StatelessWidget {
                   },
                   color1: redColor,
                   textColor: whiteColor,
-                  title: "Change"),
+                  title: Loc.get["profile_image_change"]),
               const Divider(),
               20.heightBox,
               customTextField(name, nameHint, controller.nameController, false),
@@ -86,9 +87,11 @@ class EditProfileScreen extends StatelessWidget {
                                 controller.nameController.text,
                                 controller.newpassController.text,
                               );
-                              VxToast.show(context, msg: "Updated");
+                              VxToast.show(context,
+                                  msg: Loc.get['profile_updated']);
                             } else {
-                              VxToast.show(context, msg: "Wrong password");
+                              VxToast.show(context,
+                                  msg: Loc.get['profile_wrong_password']);
                               controller.isLoading(false);
                             }
                           },

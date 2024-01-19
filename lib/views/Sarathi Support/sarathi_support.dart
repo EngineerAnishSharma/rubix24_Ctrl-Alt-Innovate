@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/utils/text_to_speech.dart';
 import 'package:tsec_hack/views/Sarathi%20Support/know_your_rights.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -60,8 +61,8 @@ class _SarathiSupportState extends State<SarathiSupport> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 110, 182, 254),
-        title: const Text(
-          "Sarathi Support",
+        title: Text(
+          Loc.get['support'],
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
@@ -91,7 +92,7 @@ class _SarathiSupportState extends State<SarathiSupport> {
                     Container(
                       margin: const EdgeInsets.only(bottom: 10.0),
                       child: Text(
-                        "Government Schemes",
+                        Loc.get['government_schemes'],
                         style: GoogleFonts.aBeeZee(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,
@@ -171,7 +172,7 @@ class _SarathiSupportState extends State<SarathiSupport> {
                     Container(
                       margin: const EdgeInsets.only(bottom: 10.0, top: 10.0),
                       child: Text(
-                        "HelpLine Numbers",
+                        Loc.get['helpline'],
                         style: GoogleFonts.aBeeZee(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,

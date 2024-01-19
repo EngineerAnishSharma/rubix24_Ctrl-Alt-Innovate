@@ -1,4 +1,5 @@
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 
 class BlogScreen extends StatelessWidget {
   const BlogScreen({super.key});
@@ -97,7 +98,7 @@ class MeetingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(16.0),
       child: Card(
         elevation: 4.0,
@@ -107,7 +108,7 @@ class MeetingCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Meeting Details',
+                Loc.get['meeting_details'],
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -139,7 +140,7 @@ class MeetingCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: Text('Project Kickoff'),
+                subtitle: Text(Loc.get['topic']),
               ),
             ],
           ),

@@ -6,6 +6,68 @@ language_desc, Changing language will restart the Application Are you sure?, भ
 yes, yes , हाँ
 no , no , नहीं
 
+login, Login to Sarathi,सारथी में लॉग इन करें
+signup,Join Sarathi,सारथी से जुड़ें
+signup_agree,I agree to the,मैं करने के लिए सहमत हूं
+
+search_job, Search Job,नौकरी खोजें
+
+
+profile_image_change,Change,परिवर्तन
+profile_updated, Updated, अद्यतन
+profile_wrong_password, Wrong password,गलत पासवर्ड
+get_information_title,My Information,मेरी जानकारी
+
+o1, Where talent takes center stage not disability, जहां विकलांगता नहीं बल्कि प्रतिभा केंद्र में आती है।
+o2,Disability is just one part of the story, विकलांगता कहानी का सिर्फ एक हिस्सा है
+o2_2, Let Sarathi write the rest,बाकी सारथी को लिखने दीजिए
+o3, Sarathi is your hero,सारथी आपका हीरो है
+o3_2, Sarathi: Because everyone deserves a chance to soar, सारथी: क्योंकि हर किसी को आगे बढ़ने का मौका मिलना चाहिए।
+o_next, Next, अगला
 kyr1, You have the right to get a job like everyone else Employers should help you do your job comfortably, आपको भी हर किसी की तरह नौकरी पाने का अधिकार है। नियोक्ताओं को आपका काम आराम से करने में मदद करनी चाहिए
+kyr2, People cannot treat you badly because of your disability. This includes schools hospitals and other public places, आपकी विकलांगता के कारण लोग आपके साथ बुरा व्यवहार नहीं कर सकते। इसमें स्कूल अस्पताल और अन्य सार्वजनिक स्थान शामिल हैं
+ky3, Buildings transport and information should be easy for you to use. People should make places and websites accessible for you, भवन परिवहन और जानकारी का उपयोग आपके लिए आसान होना चाहिए। लोगों को स्थानों और वेबसाइटों को आपके लिए सुलभ बनाना चाहिए
+kyr4, You have the right to go to school like any other person. Schools should help you learn and teachers should understand your needs, आपको किसी अन्य व्यक्ति की तरह स्कूल जाने का अधिकार है। स्कूलों को आपको सीखने में मदद करनी चाहिए और शिक्षकों को आपकी ज़रूरतों को समझना चाहिए
+kyr5, If you need money or support there are programs to help you. The government provides assistance for your well-being, यदि आपको धन या सहायता की आवश्यकता है तो आपकी सहायता के लिए कार्यक्रम मौजूद हैं। सरकार आपकी भलाई के लिए सहायता प्रदान करती है
+ky6, You have the chance to work for the government. There are reserved positions to make sure you get a fair opportunity, आपके पास सरकार के लिए काम करने का मौका है। यह सुनिश्चित करने के लिए कि आपको उचित अवसर मिले आरक्षित पद हैं
+ky7, You have the right to decide things for yourself like getting married or managing your money, आपको अपने लिए चीजें तय करने का अधिकार है जैसे शादी करना या अपने पैसे का प्रबंधन करना
+ky8, People should give you information in a way you can understand. This could be through Braille sign language or other helpful methods, लोगों को आपको इस तरह से जानकारी देनी चाहिए कि आप उसे समझ सकें। यह ब्रेल सांकेतिक भाषा या अन्य सहायक तरीकों के माध्यम से हो सकता है
+ky9, You should get good healthcare that meets your needs. Special hospitals and services are there for you, आपको अच्छी स्वास्थ्य देखभाल मिलनी चाहिए जो आपकी आवश्यकताओं को पूरा करती हो। आपके लिए विशेष अस्पताल और सेवाएँ मौजूद हैं
+ky10, No one should hurt or exploit you. Laws are there to keep you safe from violence and abuse, किसी को भी आपको कष्ट या शोषण नहीं करना चाहिए। कानून आपको हिंसा और दुर्व्यवहार से सुरक्षित रखने के लिए हैं
+
 
 profile_english, Switch Language to English, भाषा को अंग्रेजी में बदलें
+bio, Bio,जैव
+bio_hint, Write your bio here...,अपना बायोडाटा यहां लिखें...
+name, Name, नाम
+fresher, Fresher, नवसिखुआ
+address, Address, पता
+email, Email,ईमेल
+phone, Phone No, फोन नंबर
+user,User Details, उपयोगकर्ता विवरण
+language_p, Language Proficiency,भाषा प्रवीणता
+language, Language, भाषा
+add_language, Add Language, भाषा जोड़ें
+education, Education, शिक्षा
+institution, Institution ,संस्थान
+degree, Degree, डिग्री
+year, Year, वर्ष
+add_eduction, Add Education, शिक्षा जोड़ें
+career, Career Preferences,कैरियर प्राथमिकताएँ.
+salary, Preferred Salary, पसंदीदा वेतन
+type, Job Type, कार्य का प्रकार
+role, Preferred Role, पसंदीदा भूमिका
+shift, Preferred Shift,पसंदीदा शिफ्ट
+employment_type, Employment Type, रोजगार के प्रकार
+
+resume, Attach Resume (PDF), बायोडाटा संलग्न करें (पीडीएफ)
+skills, Key Skills,प्रमुख कौशल
+add_skills, Add Skills, कौशल जोड़ें
+add, Add, जोड़ना
+
+support, Sararthi Support, Sarathi सहायता
+government_schemes, Government Schemes, सरकारी योजनाएं
+helpline, HelpLine Numbers, हेल्पलाइन नंबर
+
+meeting_details, Meeting Details, बैठक विवरण
+topic, Project Kickoff,परियोजना को प्रारंभ

@@ -214,8 +214,8 @@ class _BioSectionState extends State<BioSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Bio',
+              Text(
+                Loc.get['bio'],
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -238,8 +238,8 @@ class _BioSectionState extends State<BioSection> {
               ? TextField(
                   controller: _bioController,
                   maxLines: 3,
-                  decoration: const InputDecoration(
-                    hintText: 'Write your bio here...',
+                  decoration: InputDecoration(
+                    hintText: Loc.get['bio_hint'],
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -253,7 +253,7 @@ class _BioSectionState extends State<BioSection> {
                 )
               : Text(
                   _bioController.text.isEmpty
-                      ? "Write here..."
+                      ? Loc.get['bio_hint']
                       : _bioController.text,
                   style: const TextStyle(fontSize: 16),
                 ),
@@ -292,8 +292,8 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'User Details',
+                Text(
+                  Loc.get['user'],
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -319,30 +319,30 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
             TextField(
               controller: nameController1,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(labelText: Loc.get['name']),
             ),
             TextField(
               controller: postController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Fresher'),
+              decoration: InputDecoration(labelText: Loc.get['fresher']),
             ),
             const SizedBox(height: 10),
             TextField(
               controller: addressController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Address'),
+              decoration: InputDecoration(labelText: Loc.get['address']),
             ),
             const SizedBox(height: 10),
             TextField(
               controller: emailController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: Loc.get['email']),
             ),
             const SizedBox(height: 10),
             TextField(
               controller: phoneController,
               enabled: _isEditing,
-              decoration: const InputDecoration(labelText: 'Phone Number'),
+              decoration: InputDecoration(labelText: Loc.get['phone']),
             ),
           ],
         ),
@@ -393,8 +393,8 @@ class _LanguageSectionState extends State<LanguageSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Language Proficiency',
+              Text(
+                Loc.get['language_p'],
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -421,13 +421,13 @@ class _LanguageSectionState extends State<LanguageSection> {
                       child: TextField(
                         controller: languageController,
                         decoration:
-                            const InputDecoration(labelText: 'Language'),
+                            InputDecoration(labelText: Loc.get['language']),
                       ),
                     ),
                     const SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: addLanguage,
-                      child: const Text('Add Language'),
+                      child: Text(Loc.get['add_language']),
                     ),
                   ],
                 )
@@ -525,8 +525,8 @@ class _EducationSectionState extends State<EducationSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Education',
+              Text(
+                Loc.get['education'],
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -551,23 +551,23 @@ class _EducationSectionState extends State<EducationSection> {
                     TextField(
                       controller: institutionController,
                       decoration:
-                          const InputDecoration(labelText: 'Institution'),
+                          InputDecoration(labelText: Loc.get['institution']),
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: degreeController,
-                      decoration: const InputDecoration(labelText: 'Degree'),
+                      decoration: InputDecoration(labelText: Loc.get['degree']),
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: yearController,
-                      decoration: const InputDecoration(labelText: 'Year'),
+                      decoration: InputDecoration(labelText: Loc.get['year']),
                       keyboardType: TextInputType.number,
                     ),
                     const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: addEducation,
-                      child: const Text('Add Education'),
+                      child: Text(Loc.get['add_education']),
                     ),
                   ],
                 )
@@ -661,8 +661,8 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Career Preferences',
+              Text(
+                Loc.get['career'],
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -692,32 +692,29 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
                     const SizedBox(height: 10),
                     TextField(
                       controller: salaryController,
-                      decoration:
-                          const InputDecoration(labelText: 'Preferred Salary'),
+                      decoration: InputDecoration(labelText: Loc.get['salary']),
                       keyboardType: TextInputType.number,
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: jobTypeController,
-                      decoration: const InputDecoration(labelText: 'Job Type'),
+                      decoration: InputDecoration(labelText: Loc.get['type']),
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: roleController,
-                      decoration:
-                          const InputDecoration(labelText: 'Preferred Role'),
+                      decoration: InputDecoration(labelText: Loc.get['role']),
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: shiftController,
-                      decoration:
-                          const InputDecoration(labelText: 'Preferred Shift'),
+                      decoration: InputDecoration(labelText: Loc.get['shift']),
                     ),
                     const SizedBox(height: 10),
                     TextField(
                       controller: employmentTypeController,
-                      decoration:
-                          const InputDecoration(labelText: 'Employment Type'),
+                      decoration: InputDecoration(
+                          labelText: Loc.get['employment_type']),
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -766,8 +763,8 @@ class _ResumeSectionState extends State<ResumeSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Attach Resume (PDF)',
+        Text(
+          Loc.get['resume'],
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -776,7 +773,7 @@ class _ResumeSectionState extends State<ResumeSection> {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: _pickAndOpenPDFFile,
-          child: const Text('Attach PDF'),
+          child: Text(Loc.get['resume']),
         ),
         const SizedBox(height: 10),
         // _filePath.isNotEmpty
@@ -828,8 +825,8 @@ class _SkillsSectionState extends State<SkillsSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Key Skills',
+          Text(
+            Loc.get['skills'],
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -841,13 +838,13 @@ class _SkillsSectionState extends State<SkillsSection> {
               Expanded(
                 child: TextField(
                   controller: skillController,
-                  decoration: const InputDecoration(labelText: 'Enter Skill'),
+                  decoration: InputDecoration(labelText: Loc.get['add_skills']),
                 ),
               ),
               const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: addSkill,
-                child: const Text('Add'),
+                child: Text(Loc.get['add']),
               ),
             ],
           ),

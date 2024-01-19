@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/views/home_screen/home.dart';
 
 class Onboarding extends StatefulWidget {
@@ -46,7 +47,7 @@ class _TestState extends State<Onboarding> {
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(
-                      "Where talent takes center stage, not disability.",
+                      Loc.get['o1'],
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.bold,
@@ -72,7 +73,7 @@ class _TestState extends State<Onboarding> {
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(
-                      "Disability is just one part of the story.",
+                      Loc.get['o2'],
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.bold,
@@ -84,7 +85,7 @@ class _TestState extends State<Onboarding> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("Let Sarathi write the rest.", style: GoogleFonts.lato())
+                  Text(Loc.get['o2_2'], style: GoogleFonts.lato())
                       .text
                       .white
                       .make(),
@@ -99,7 +100,7 @@ class _TestState extends State<Onboarding> {
                     width: 350,
                   ),
                   Text(
-                    "Sarathi is your hero",
+                    Loc.get['o3'],
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -111,7 +112,7 @@ class _TestState extends State<Onboarding> {
                     height: 20,
                   ),
                   Text(
-                    "Sarathi: Because everyone deserves a chance to soar.",
+                    Loc.get['o3_2'],
                     style: GoogleFonts.lato(),
                   ).text.white.make(),
                 ],
@@ -166,7 +167,7 @@ class _TestState extends State<Onboarding> {
                       });
                     },
                     child: currentPage != 3
-                        ? const Text('    Next',
+                        ? Text(Loc.get['o_next'],
                             style: TextStyle(color: Colors.white))
                         : Image.asset("assets/images/location.png",
                             height: MediaQuery.of(context).size.width * 0.06)),

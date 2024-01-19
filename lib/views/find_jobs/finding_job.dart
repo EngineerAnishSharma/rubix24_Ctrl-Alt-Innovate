@@ -1,4 +1,5 @@
 import 'package:tsec_hack/consts/consts.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/controller/recommendation_system.dart';
 import 'package:tsec_hack/widgets_common/jobcard_widget.dart';
 
@@ -60,7 +61,7 @@ class _FindingJobScreenState extends State<FindingJobScreen> {
                       }),
                       filled: true,
                       fillColor: whiteColor,
-                      hintText: "Search Job",
+                      hintText: Loc.get['search_job'],
                       hintStyle: const TextStyle(color: textfieldGrey),
                     ),
                   ),

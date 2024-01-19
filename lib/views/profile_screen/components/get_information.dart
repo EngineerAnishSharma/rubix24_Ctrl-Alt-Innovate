@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tsec_hack/consts/colors.dart';
 import 'package:tsec_hack/consts/firebase_const.dart';
+import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/services/firestore_services.dart';
 
 class ResumeScreen extends StatelessWidget {
@@ -12,8 +13,8 @@ class ResumeScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: whiteColor,
         appBar: AppBar(
-          title: const Text(
-            'My Information',
+          title: Text(
+            Loc.get["get_information_title"],
             style: TextStyle(color: Colors.black),
           ),
         ),
