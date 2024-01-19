@@ -1,6 +1,7 @@
 import 'package:confetti/confetti.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tsec_hack/consts/consts.dart';
 import 'package:tsec_hack/controller/auth_controller.dart';
 import 'package:tsec_hack/controller/local_storage.dart';
@@ -8,6 +9,7 @@ import 'package:tsec_hack/controller/localization_controller.dart';
 import 'package:tsec_hack/controller/person_controller.dart';
 import 'package:tsec_hack/views/auth_screen/login_screen.dart';
 import 'package:tsec_hack/views/profile_screen/components/get_information.dart';
+import 'package:tsec_hack/widgets_common/accessiblity_change_dialog.dart';
 import 'package:tsec_hack/widgets_common/accommodation_screen.dart';
 import 'package:tsec_hack/widgets_common/language_change_dialog.dart';
 import 'package:tsec_hack/widgets_common/our_button.dart';
@@ -39,74 +41,24 @@ class _ProfileEditorState extends State<ProfileEditor> {
   @override
   Widget build(BuildContext context) {
     bool isEnglish = false;
+    bool isBlind = false;
     LocalStorage.getBool("is_english", false)
         .then((value) => isEnglish = value);
+    LocalStorage.getBool("is_blind", false).then((value) => isBlind = value);
     var controller = Get.put(AuthController());
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 177, 210, 241),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
-          30.heightBox,
+          40.heightBox,
           ConfettiWidget(
             confettiController: _confettiController,
             blastDirectionality: BlastDirectionality.explosive,
             shouldLoop: false,
             colors: const [Colors.blue, Colors.red, Colors.green],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    Loc.get["profile_english"],
-                    style: const TextStyle(fontSize: 16, color: Colors.black),
-                  ),
-                  Switch(
-                    value: isEnglish,
-                    activeColor: const Color(0xff1db4fb),
-                    onChanged: (value) async {
-                      Get.to(() => languageDialog(context));
-                    },
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        side: const BorderSide(
-                      color: Colors.black,
-                    )),
-                    onPressed: () async {
-                      await controller.signoutMethod(context);
-                      _confettiController.play();
-                      Future.delayed(const Duration(seconds: 5), () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
-                        );
-                      });
-                    },
-                    // onPressed: () async {
-                    //   await controller.signoutMethod(context);
-                    //   // ignore: use_build_context_synchronously
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => const LoginScreen()),
-                    //   );
-                    // },
-                    child: logout.text.black.fontFamily(semibold).make(),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
+          Container(
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.topCenter,
@@ -117,7 +69,6 @@ class _ProfileEditorState extends State<ProfileEditor> {
               ).box.roundedFull.clip(Clip.antiAlias).make(),
             ),
           ),
-          5.heightBox,
           Text(name.isEmptyOrNull ? name : ""),
           Padding(
             padding:
@@ -194,7 +145,81 @@ class _ProfileEditorState extends State<ProfileEditor> {
                     title: "Save"),
               ],
             ),
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        Loc.get["profile_english"],
+                        style: GoogleFonts.aBeeZee(
+                            fontSize: 16, color: Colors.black),
+                      ),
+                      Switch(
+                        value: isEnglish,
+                        activeColor: const Color(0xff1db4fb),
+                        onChanged: (value) async {
+                          Get.to(() => languageDialog(context));
+                        },
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        Loc.get["accessiblity_english"],
+                        style: GoogleFonts.aBeeZee(
+                            fontSize: 16, color: Colors.black),
+                      ),
+                      Switch(
+                        value: isBlind,
+                        activeColor: const Color(0xff1db4fb),
+                        onChanged: (value) async {
+                          Get.to(() => AccessiblityDialog(context));
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                      color: Colors.black,
+                    )),
+                    onPressed: () async {
+                      await controller.signoutMethod(context);
+                      _confettiController.play();
+                      Future.delayed(const Duration(seconds: 5), () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()),
+                        );
+                      });
+                    },
+                    // onPressed: () async {
+                    //   await controller.signoutMethod(context);
+                    //   // ignore: use_build_context_synchronously
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => const LoginScreen()),
+                    //   );
+                    // },
+                    child: logout.text.black.fontFamily(semibold).make(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ]),
       ),
     );
@@ -215,20 +240,19 @@ class _BioSectionState extends State<BioSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return Container(
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Bio',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: GoogleFonts.aBeeZee(fontSize: 20),
               ),
               IconButton(
                 icon: _isEditing
@@ -247,12 +271,13 @@ class _BioSectionState extends State<BioSection> {
               ? TextField(
                   controller: _bioController,
                   maxLines: 3,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'Write your bio here...',
-                    border: OutlineInputBorder(
+                    hintStyle: GoogleFonts.aBeeZee(fontSize: 14),
+                    border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
                     ),
                     enabledBorder: OutlineInputBorder(
@@ -264,7 +289,7 @@ class _BioSectionState extends State<BioSection> {
                   _bioController.text.isEmpty
                       ? "Write here..."
                       : _bioController.text,
-                  style: const TextStyle(fontSize: 16),
+                  style: GoogleFonts.aBeeZee(fontSize: 16),
                 ),
         ],
       ),
@@ -292,18 +317,21 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: const Color.fromARGB(255, 177, 210, 241),
       elevation: 5,
-      child: Padding(
+      child: Container(
         padding: const EdgeInsets.all(16.0),
+        decoration:
+            BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'User Details',
-                  style: TextStyle(
+                  style: GoogleFonts.aBeeZee(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -324,7 +352,6 @@ class _UserDetailsCardState extends State<UserDetailsCard> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
             TextField(
               controller: nameController1,
               enabled: _isEditing,
@@ -394,17 +421,19 @@ class _LanguageSectionState extends State<LanguageSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(10.0),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Language Proficiency',
-                style: TextStyle(
+                style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -422,7 +451,6 @@ class _LanguageSectionState extends State<LanguageSection> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
           _isEditing
               ? Row(
                   children: [
@@ -441,7 +469,6 @@ class _LanguageSectionState extends State<LanguageSection> {
                   ],
                 )
               : Container(),
-          const SizedBox(height: 10),
           languages.isNotEmpty
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -526,17 +553,22 @@ class _EducationSectionState extends State<EducationSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 16,
+        right: 16,
+      ),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Education',
-                style: TextStyle(
+                style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -581,7 +613,6 @@ class _EducationSectionState extends State<EducationSection> {
                   ],
                 )
               : Container(),
-          const SizedBox(height: 20),
           educations.isNotEmpty
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -662,17 +693,19 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(16.0),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Career Preferences',
-                style: TextStyle(
+                style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -689,7 +722,6 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
           (_isEditing)
               ? Column(
                   children: [
@@ -698,37 +730,31 @@ class _CareerPreferencesSectionState extends State<CareerPreferencesSection> {
                       decoration: const InputDecoration(
                           labelText: 'Preferred Location'),
                     ),
-                    const SizedBox(height: 10),
                     TextField(
                       controller: salaryController,
                       decoration:
                           const InputDecoration(labelText: 'Preferred Salary'),
                       keyboardType: TextInputType.number,
                     ),
-                    const SizedBox(height: 10),
                     TextField(
                       controller: jobTypeController,
                       decoration: const InputDecoration(labelText: 'Job Type'),
                     ),
-                    const SizedBox(height: 10),
                     TextField(
                       controller: roleController,
                       decoration:
                           const InputDecoration(labelText: 'Preferred Role'),
                     ),
-                    const SizedBox(height: 10),
                     TextField(
                       controller: shiftController,
                       decoration:
                           const InputDecoration(labelText: 'Preferred Shift'),
                     ),
-                    const SizedBox(height: 10),
                     TextField(
                       controller: employmentTypeController,
                       decoration:
                           const InputDecoration(labelText: 'Employment Type'),
                     ),
-                    const SizedBox(height: 20),
                   ],
                 )
               : Container(),
@@ -772,30 +798,31 @@ class _ResumeSectionState extends State<ResumeSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Attach Resume (PDF)',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+    return Container(
+      padding: EdgeInsets.only(left: 8, right: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Attach Resume (PDF)',
+            style: GoogleFonts.aBeeZee(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: _pickAndOpenPDFFile,
-          child: const Text('Attach PDF'),
-        ),
-        const SizedBox(height: 10),
-        // _filePath.isNotEmpty
-        //     ? Expanded(
-        //         child: PDFViewer(
-        //           document: _pdfDocument,
-        //         ),
-        //       )
-        //     : Container(),
-      ],
+          ElevatedButton(
+            onPressed: _pickAndOpenPDFFile,
+            child: const Text('Attach PDF'),
+          ),
+          // _filePath.isNotEmpty
+          //     ? Expanded(
+          //         child: PDFViewer(
+          //           document: _pdfDocument,
+          //         ),
+          //       )
+          //     : Container(),
+        ],
+      ),
     );
   }
 }
@@ -832,19 +859,21 @@ class _SkillsSectionState extends State<SkillsSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return Container(
+      padding:
+          const EdgeInsets.only(left: 16.0, right: 16.0, top: 8, bottom: 8),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Key Skills',
-            style: TextStyle(
+            style: GoogleFonts.aBeeZee(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 20),
           Row(
             children: [
               Expanded(
@@ -860,7 +889,6 @@ class _SkillsSectionState extends State<SkillsSection> {
               ),
             ],
           ),
-          const SizedBox(height: 10),
           skills.isNotEmpty
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

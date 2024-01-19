@@ -6,6 +6,9 @@ language_desc, Changing language will restart the Application Are you sure?, भ
 yes, yes , हाँ
 no , no , नहीं
 
+accessiblity_confirm, Confirm, पुष्टिकरन
+
 kyr1, You have the right to get a job like everyone else Employers should help you do your job comfortably, आपको भी हर किसी की तरह नौकरी पाने का अधिकार है। नियोक्ताओं को आपका काम आराम से करने में मदद करनी चाहिए
 
 profile_english, Switch Language to English, भाषा को अंग्रेजी में बदलें
+accessiblity_english, Enable Accessiblity Feature, अभिगम्यता सुविधा सक्षम करें
